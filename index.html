@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>Nguyễn Võ Lê Khoa | Portfolio - Software Engineer</title>
+    <meta name="description" content="Portfolio cá nhân của Nguyễn Võ Lê Khoa - Sinh viên Kỹ thuật Phần mềm HUTECH, chuyên phát triển web ASP.NET Core MVC, ứng dụng di động Flutter và hệ thống thị giác máy tính AI/ML.">
+    <meta name="keywords" content="Nguyen Vo Le Khoa, KhoaSuyThan, SmartCV AI, HUTECH, .NET, C#, Flutter, Face Recognition, Computer Vision, Portfolio">
+    <meta name="author" content="Nguyễn Võ Lê Khoa">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/KhoaSuyThan">
+    <meta property="og:title" content="Nguyễn Võ Lê Khoa | Portfolio - Software Engineer">
+    <meta property="og:description" content="Khám phá các dự án công nghệ nổi bật của Lê Khoa bao gồm SmartCV AI, ứng dụng Smart Cooking di động và hệ thống nhận diện khuôn mặt PCA.">
+    <meta property="og:image" content="assets/hero-illustration.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Nguyễn Võ Lê Khoa | Portfolio - Software Engineer">
+    <meta property="twitter:description" content="Khám phá các dự án công nghệ nổi bật của Lê Khoa bao gồm SmartCV AI, ứng dụng Smart Cooking di động và hệ thống nhận diện khuôn mặt PCA.">
+    <meta property="twitter:image" content="assets/hero-illustration.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- Animated Particle Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Glassmorphic Header -->
+    <header id="main-header" class="header-glass">
+        <div class="header-container">
+            <a href="#home" class="logo" id="nav-logo">
+                <span class="bracket">&lt;</span>LeKhoa<span class="highlight">.Dev</span><span class="bracket">/&gt;</span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="nav-menu" id="nav-menu-desktop">
+                <a href="#home" class="nav-link active" id="link-home">Trang Chủ</a>
+                <a href="#about" class="nav-link" id="link-about">Giới Thiệu</a>
+                <a href="#skills" class="nav-link" id="link-skills">Kỹ Năng</a>
+                <a href="#projects" class="nav-link" id="link-projects">Dự Án</a>
+                <a href="#contact" class="nav-link" id="link-contact">Liên Hệ</a>
+            </nav>
+
+            <!-- Toggle Theme & Mobile Menu Button -->
+            <div class="header-actions">
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav-drawer" id="mobile-drawer">
+        <nav class="mobile-nav-menu">
+            <a href="#home" class="mobile-nav-link" id="mob-link-home">Trang Chủ</a>
+            <a href="#about" class="mobile-nav-link" id="mob-link-about">Giới Thiệu</a>
+            <a href="#skills" class="mobile-nav-link" id="mob-link-skills">Kỹ Năng</a>
+            <a href="#projects" class="mobile-nav-link" id="mob-link-projects">Dự Án</a>
+            <a href="#contact" class="mobile-nav-link" id="mob-link-contact">Liên Hệ</a>
+        </nav>
+    </div>
+
+    <!-- Main Content Container -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section id="home" class="hero-section scroll-reveal">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="badge-welcome">👋 Chào mừng bạn đến với không gian của tôi</div>
+                    <h1>Xin chào, tôi là <br><span class="highlight-gradient">Nguyễn Võ Lê Khoa</span></h1>
+                    <h2 class="typewriter-container">
+                        Tôi là một <span id="typewriter" class="typewriter-text"></span><span class="cursor">|</span>
+                    </h2>
+                    <p class="hero-description">
+                        Sinh viên ngành Kỹ thuật Phần mềm tại trường Đại học Công nghệ TP.HCM (HUTECH). Đam mê xây dựng ứng dụng web mạnh mẽ, ứng dụng di động đa nền tảng và nghiên cứu các giải pháp Trí tuệ Nhân tạo (AI/ML).
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary" id="btn-hero-projects">
+                            <i class="fa-solid fa-code-branch"></i> Xem dự án
+                        </a>
+                        <a href="#contact" class="btn btn-secondary" id="btn-hero-contact">
+                            Liên hệ tôi <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://github.com/KhoaSuyThan" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.facebook.com/lekhoa.nguyenvo.7" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/khoa1324142w/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:khoanv249@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <div class="image-wrapper-glass">
+                        <img src="assets/hero-illustration.png" alt="Lê Khoa Workstation Illustration" class="hero-img">
+                        <div class="glow-effect"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down-indicator">
+                <a href="#about" aria-label="Scroll down">
+                    <span class="mouse-icon">
+                        <span class="wheel"></span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">01. Về tôi</span>
+                    <h2 class="section-title">Câu Chuyện Của Tôi</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <!-- Left: Stats Grid -->
+                    <div class="about-stats-grid">
+                        <div class="stat-card glass-card">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Kho lưu trữ GitHub</span>
+                        </div>
+                        <div class="stat-card glass-card">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Dự án cốt lõi</span>
+                        </div>
+                        <div class="stat-card glass-card">
+                            <span class="stat-number">2026</span>
+                            <span class="stat-label">Đang học Kỹ sư HUTECH</span>
+                        </div>
+                        <div class="stat-card glass-card">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Đam mê & Tâm huyết</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Info Narrative -->
+                    <div class="about-info-text">
+                        <h3>Tôi là ai?</h3>
+                        <p>
+                            Chào bạn! Tôi là một nhà phát triển phần mềm trẻ tuổi năng động tại Việt Nam. Hiện tôi đang là sinh viên theo học chuyên ngành <strong>Kỹ thuật Phần mềm</strong> tại Đại học Công nghệ TP.HCM (HUTECH).
+                        </p>
+                        <p>
+                            Tôi yêu thích việc giải quyết các bài toán kỹ thuật từ cơ bản đến phức tạp. Từ việc thiết kế cơ sở dữ liệu quan hệ chặt chẽ đến việc lập trình giao diện người dùng mượt mà, tôi luôn cố gắng học hỏi và hoàn thiện sản phẩm của mình tốt nhất.
+                        </p>
+                        <p>
+                            Hiện tại, tôi đang tập trung đi sâu nghiên cứu **Hệ sinh thái .NET (C#)**, kiến trúc hệ thống (System Architecture) và tìm hiểu sâu hơn về mô hình hóa 3D (3D Modeling) nhằm tạo nên các ứng dụng đột phá và toàn diện hơn trong tương lai.
+                        </p>
+                        
+                        <div class="about-education glass-card">
+                            <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="edu-details">
+                                <h4>Đại học Công nghệ TP.HCM (HUTECH)</h4>
+                                <p>Ngành Kỹ thuật Phần mềm (Software Engineering)</p>
+                                <span class="edu-time">Đang theo học (Sinh viên)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">02. Kỹ năng</span>
+                    <h2 class="section-title">Công Nghệ & Công Cụ</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="skills-grid">
+                    <!-- Core Backend & .NET -->
+                    <div class="skills-category glass-card">
+                        <div class="category-header">
+                            <i class="fa-solid fa-server icon-backend"></i>
+                            <h3>Backend & .NET Ecosystem</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li><i class="fa-solid fa-circle-check"></i> C# Language</li>
+                            <li><i class="fa-solid fa-circle-check"></i> ASP.NET Core MVC</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Entity Framework Core</li>
+                            <li><i class="fa-solid fa-circle-check"></i> RESTful API</li>
+                        </ul>
+                    </div>
+
+                    <!-- Frontend & Mobile -->
+                    <div class="skills-category glass-card">
+                        <div class="category-header">
+                            <i class="fa-solid fa-mobile-screen icon-mobile"></i>
+                            <h3>Frontend & Mobile App</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Flutter & Dart</li>
+                            <li><i class="fa-solid fa-circle-check"></i> HTML5 & CSS3</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Javascript (ES6+)</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Responsive UI Design</li>
+                        </ul>
+                    </div>
+
+                    <!-- AI & Computer Vision -->
+                    <div class="skills-category glass-card">
+                        <div class="category-header">
+                            <i class="fa-solid fa-brain icon-ai"></i>
+                            <h3>AI & Computer Vision</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Python programming</li>
+                            <li><i class="fa-solid fa-circle-check"></i> OpenCV (Image Processing)</li>
+                            <li><i class="fa-solid fa-circle-check"></i> PCA (Eigenfaces Algorithm)</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Machine Learning Basics</li>
+                        </ul>
+                    </div>
+
+                    <!-- Databases & Infrastructure -->
+                    <div class="skills-category glass-card">
+                        <div class="category-header">
+                            <i class="fa-solid fa-database icon-db"></i>
+                            <h3>Database & Infrastructure</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li><i class="fa-solid fa-circle-check"></i> SQL Server</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Firebase (Firestore, Auth)</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Git & Version Control</li>
+                            <li><i class="fa-solid fa-circle-check"></i> System Architecture</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">03. Dự án</span>
+                    <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <!-- Showcase Core Projects -->
+                <div class="projects-featured-container">
+                    
+                    <!-- Project 1: SmartCV AI Builder (Heart Project) -->
+                    <div class="project-featured glass-card project-heart">
+                        <div class="project-heart-badge"><i class="fa-solid fa-heart animate-pulse"></i> DỰ ÁN TÂM HUYẾT NHẤT</div>
+                        <div class="project-featured-image">
+                            <img src="assets/project-smartcv.png" alt="SmartCV AI Website Dashboard Screenshot">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="project-featured-info">
+                            <span class="project-number">Featured Project</span>
+                            <h3>SmartCV AI Builder</h3>
+                            <p class="project-featured-desc">
+                                Một nền tảng trực tuyến thông minh giúp người dùng xây dựng, quản lý và tối ưu hóa CV xin việc một cách chuyên nghiệp với sự trợ giúp đắc lực của Trí tuệ Nhân tạo. Nền tảng được xây dựng với giao diện hiện đại bằng React js và Vue js, kết hợp với hệ thống backend ASP.NET Core và SQL Server.
+                            </p>
+                            <ul class="project-tags">
+                                <li>React.js</li>
+                                <li>Vue.js</li>
+                                <li>ASP.NET Core MVC</li>
+                                <li>SQL Server</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://smartcv-ai.io.vn/" target="_blank" rel="noopener noreferrer" class="project-btn btn-live" id="link-smartcv-live">
+                                    <i class="fa-solid fa-earth-americas"></i> Xem Trực Tiếp (smartcv-ai.io.vn)
+                                </a>
+                                <a href="https://github.com/KhoaSuyThan" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="GitHub Repo" id="link-smartcv-github">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Smart Cooking App -->
+                    <div class="project-featured glass-card reverse-layout">
+                        <div class="project-featured-image">
+                            <img src="assets/project-cooking.png" alt="Smart Cooking Mobile App Screenshot">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="project-featured-info">
+                            <span class="project-number">Mobile Project</span>
+                            <h3>Smart Cooking & Community</h3>
+                            <p class="project-featured-desc">
+                                Ứng dụng di động đa nền tảng kết hợp mạng xã hội ẩm thực và trợ lý nấu ăn. Hỗ trợ khám phá hàng ngàn công thức nấu ăn trực tuyến, đồng bộ hóa thời gian thực qua cơ sở dữ liệu Firebase và hỗ trợ dịch thuật tự động công thức nấu ăn đa ngôn ngữ.
+                            </p>
+                            <ul class="project-tags">
+                                <li>Flutter</li>
+                                <li>Dart</li>
+                                <li>Firebase Firestore</li>
+                                <li>TheMealDB API</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/nguyennhatnam213654-creator/DoAnApp" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="GitHub Repo" id="link-cooking-github">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Face Recognition System -->
+                    <div class="project-featured glass-card">
+                        <div class="project-featured-image">
+                            <img src="assets/project-face.png" alt="Real-time Face Recognition GUI Screenshot">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="project-featured-info">
+                            <span class="project-number">AI / Machine Learning Project</span>
+                            <h3>Face Recognition (PCA & OpenCV)</h3>
+                            <p class="project-featured-desc">
+                                Hệ thống nhận diện khuôn mặt thời gian thực sử dụng camera giám sát. Dự án triển khai thuật toán Phân tích Thành phần Chính (PCA) để giảm số chiều đặc trưng (Eigenfaces) và tiến hành phân loại danh tính khuôn mặt chính xác trên bộ dữ liệu kiểm thử được thiết lập.
+                            </p>
+                            <ul class="project-tags">
+                                <li>Python</li>
+                                <li>OpenCV</li>
+                                <li>PCA Algorithm</li>
+                                <li>NumPy / SciPy</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/KhoaSuyThan/FaceRecognitionPCA" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="GitHub Repo" id="link-face-github">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GitHub Repos Showcase -->
+                <div class="github-repos-showcase">
+                    <h3 class="repos-title"><i class="fa-solid fa-code-commit"></i> Các Dự Án Khác Trên GitHub</h3>
+                    
+                    <div class="repos-grid" id="repos-container">
+                        <!-- Repos will be injected dynamically via JS, static fallback shown below -->
+                        
+                        <!-- Fallback Card 1 -->
+                        <div class="repo-card glass-card">
+                            <div class="repo-header">
+                                <i class="fa-regular fa-folder-open folder-icon"></i>
+                                <div class="repo-links">
+                                    <a href="https://github.com/KhoaSuyThan/QuanLyBHXH" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                            <h4>QuanLyBHXH</h4>
+                            <p class="repo-desc">Hệ thống quản lý thông tin Bảo Hiểm Xã Hội được lập trình bằng C#, quản lý danh sách người tham gia, lịch sử đóng và các chế độ chính sách BHXH.</p>
+                            <div class="repo-footer">
+                                <span class="repo-lang"><span class="lang-color lang-csharp"></span>C#</span>
+                                <span class="repo-stars"><i class="fa-regular fa-star"></i> 4</span>
+                            </div>
+                        </div>
+
+                        <!-- Fallback Card 2 -->
+                        <div class="repo-card glass-card">
+                            <div class="repo-header">
+                                <i class="fa-regular fa-folder-open folder-icon"></i>
+                                <div class="repo-links">
+                                    <a href="https://github.com/KhoaSuyThan/PhanLoaiRacThai" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                            <h4>PhanLoaiRacThai</h4>
+                            <p class="repo-desc">Ứng dụng trang thông tin phân loại rác thải sinh hoạt, bảo vệ môi trường, cung cấp cẩm nang và cách phân loại rác hữu cơ, vô cơ.</p>
+                            <div class="repo-footer">
+                                <span class="repo-lang"><span class="lang-color lang-html"></span>HTML</span>
+                                <span class="repo-stars"><i class="fa-regular fa-star"></i> 4</span>
+                            </div>
+                        </div>
+
+                        <!-- Fallback Card 3 -->
+                        <div class="repo-card glass-card">
+                            <div class="repo-header">
+                                <i class="fa-regular fa-folder-open folder-icon"></i>
+                                <div class="repo-links">
+                                    <a href="https://github.com/KhoaSuyThan/QuanLyDongTien" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                            <h4>QuanLyDongTien</h4>
+                            <p class="repo-desc">Dự án C# quản lý dòng tiền cá nhân và doanh nghiệp nhỏ, hỗ trợ lập biểu đồ báo cáo tài chính, doanh thu, chi phí chi tiết.</p>
+                            <div class="repo-footer">
+                                <span class="repo-lang"><span class="lang-color lang-csharp"></span>C#</span>
+                                <span class="repo-stars"><i class="fa-regular fa-star"></i> 4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="repos-more-btn-container">
+                        <a href="https://github.com/KhoaSuyThan?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="btn-more-repos">
+                            Xem thêm trên GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">04. Liên hệ</span>
+                    <h2 class="section-title">Kết Nối Với Tôi</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Left side: contact details -->
+                    <div class="contact-info">
+                        <h3>Hãy nói chuyện!</h3>
+                        <p>
+                            Tôi luôn hào hứng học hỏi các dự án mã nguồn mở, cơ hội thực tập, việc làm mới hoặc các cuộc thảo luận kỹ thuật bổ ích. Đừng ngần ngại liên lạc với tôi qua biểu mẫu bên cạnh hoặc các mạng xã hội bên dưới!
+                        </p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-item glass-card">
+                                <i class="fa-solid fa-envelope"></i>
+                                <div class="method-details">
+                                    <span>Gửi Email</span>
+                                    <a href="mailto:khoanv249@gmail.com">khoanv249@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item glass-card">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div class="method-details">
+                                    <span>Vị Trí</span>
+                                    <a href="https://www.google.com/maps?q=HUTECH+University+Ho+Chi+Minh" target="_blank" rel="noopener noreferrer">TP. Hồ Chí Minh, Việt Nam</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social-pills">
+                            <a href="https://github.com/KhoaSuyThan" target="_blank" rel="noopener noreferrer" class="pill-btn" id="social-pill-github"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="https://www.facebook.com/lekhoa.nguyenvo.7" target="_blank" rel="noopener noreferrer" class="pill-btn" id="social-pill-fb"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                            <a href="https://www.instagram.com/khoa1324142w/" target="_blank" rel="noopener noreferrer" class="pill-btn" id="social-pill-ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        </div>
+                    </div>
+
+                    <!-- Right side: glassmorphic contact form -->
+                    <div class="contact-form-container glass-card">
+                        <form id="contact-form" autocomplete="off">
+                            <div class="form-group">
+                                <input type="text" id="contact-name" name="name" required placeholder=" ">
+                                <label for="contact-name">Họ và tên</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" id="contact-email" name="email" required placeholder=" ">
+                                <label for="contact-email">Địa chỉ Email</label>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea id="contact-message" name="message" required placeholder=" " rows="5"></textarea>
+                                <label for="contact-message">Lời nhắn của bạn...</label>
+                            </div>
+
+                            <button type="submit" id="contact-submit" class="btn btn-primary btn-submit">
+                                Gửi lời nhắn <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Nguyễn Võ Lê Khoa. All rights reserved.</p>
+            <p class="tech-stack-credit">Thiết kế tinh tế bằng HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <!-- Form Notification Modal (Glassmorphic) -->
+    <div class="notification-modal" id="form-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-icon"><i class="fa-solid fa-circle-check animate-scale"></i></div>
+            <h3>Gửi thành công!</h3>
+            <p>Cảm ơn bạn đã gửi liên hệ. Tôi sẽ phản hồi lại bạn qua email sớm nhất có thể.</p>
+            <button class="btn btn-primary close-modal-btn" id="close-modal-btn">Đóng</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
