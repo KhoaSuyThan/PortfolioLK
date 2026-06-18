@@ -34,6 +34,9 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Devicon Stylesheet for Programming Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -51,17 +54,22 @@
             
             <!-- Desktop Nav -->
             <nav class="nav-menu" id="nav-menu-desktop">
-                <a href="#home" class="nav-link active" id="link-home">Trang Chủ</a>
-                <a href="#about" class="nav-link" id="link-about">Giới Thiệu</a>
-                <a href="#skills" class="nav-link" id="link-skills">Kỹ Năng</a>
-                <a href="#projects" class="nav-link" id="link-projects">Dự Án</a>
-                <a href="#contact" class="nav-link" id="link-contact">Liên Hệ</a>
+                <a href="#home" class="nav-link active" id="link-home" data-i18n="nav-home">Trang Chủ</a>
+                <a href="#about" class="nav-link" id="link-about" data-i18n="nav-about">Giới Thiệu</a>
+                <a href="#skills" class="nav-link" id="link-skills" data-i18n="nav-skills">Kỹ Năng</a>
+                <a href="#projects" class="nav-link" id="link-projects" data-i18n="nav-projects">Dự Án</a>
+                <a href="#contact" class="nav-link" id="link-contact" data-i18n="nav-contact">Liên Hệ</a>
             </nav>
 
             <!-- Toggle Theme & Mobile Menu Button -->
             <div class="header-actions">
+                <button class="lang-toggle" id="lang-toggle-btn" aria-label="Toggle Language">
+                    <span class="lang-text active" id="lang-vi">VI</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang-text" id="lang-en">EN</span>
+                </button>
                 <a href="assets/CV.pdf" target="_blank" class="btn-cv" id="btn-cv-header">
-                    <i class="fa-solid fa-file-pdf"></i> CV của tôi
+                    <i class="fa-solid fa-file-pdf"></i> <span data-i18n="btn-cv">CV của tôi</span>
                 </a>
                 <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
                     <span class="bar"></span>
@@ -75,14 +83,21 @@
     <!-- Mobile Drawer Navigation -->
     <div class="mobile-nav-drawer" id="mobile-drawer">
         <nav class="mobile-nav-menu">
-            <a href="#home" class="mobile-nav-link" id="mob-link-home">Trang Chủ</a>
-            <a href="#about" class="mobile-nav-link" id="mob-link-about">Giới Thiệu</a>
-            <a href="#skills" class="mobile-nav-link" id="mob-link-skills">Kỹ Năng</a>
-            <a href="#projects" class="mobile-nav-link" id="mob-link-projects">Dự Án</a>
-            <a href="#contact" class="mobile-nav-link" id="mob-link-contact">Liên Hệ</a>
-            <a href="assets/Nguyễn Võ Lê Khoa - Fullstack Developer Intern.pdf" target="_blank" class="mobile-nav-link btn-cv-mobile" id="mob-link-cv">
-                <i class="fa-solid fa-file-pdf"></i> CV của tôi
+            <a href="#home" class="mobile-nav-link" id="mob-link-home" data-i18n="nav-home">Trang Chủ</a>
+            <a href="#about" class="mobile-nav-link" id="mob-link-about" data-i18n="nav-about">Giới Thiệu</a>
+            <a href="#skills" class="mobile-nav-link" id="mob-link-skills" data-i18n="nav-skills">Kỹ Năng</a>
+            <a href="#projects" class="mobile-nav-link" id="mob-link-projects" data-i18n="nav-projects">Dự Án</a>
+            <a href="#contact" class="mobile-nav-link" id="mob-link-contact" data-i18n="nav-contact">Liên Hệ</a>
+            <a href="assets/CV.pdf" target="_blank" class="mobile-nav-link btn-cv-mobile" id="mob-link-cv">
+                <i class="fa-solid fa-file-pdf"></i> <span data-i18n="btn-cv">CV của tôi</span>
             </a>
+            <div class="mobile-lang-container">
+                <button class="lang-toggle" id="mob-lang-toggle-btn" aria-label="Toggle Language Mobile">
+                    <span class="lang-text active" id="mob-lang-vi">VI</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang-text" id="mob-lang-en">EN</span>
+                </button>
+            </div>
         </nav>
     </div>
 
@@ -93,20 +108,20 @@
         <section id="home" class="hero-section scroll-reveal">
             <div class="hero-container">
                 <div class="hero-content">
-                    <div class="badge-welcome">👋 Chào mừng bạn đến với không gian của tôi</div>
-                    <h1>Xin chào, tôi là <br><span class="highlight-gradient">Nguyễn Võ Lê Khoa</span></h1>
+                    <div class="badge-welcome" data-i18n="hero-welcome">👋 Chào mừng bạn đến với không gian của tôi</div>
+                    <h1 data-i18n="hero-greet">Xin chào, tôi là <br><span class="highlight-gradient">Nguyễn Võ Lê Khoa</span></h1>
                     <h2 class="typewriter-container">
-                        Tôi là một <span id="typewriter" class="typewriter-text"></span><span class="cursor">|</span>
+                        <span data-i18n="hero-iam">Tôi là một</span> <span id="typewriter" class="typewriter-text"></span><span class="cursor">|</span>
                     </h2>
-                    <p class="hero-description">
+                    <p class="hero-description" data-i18n="hero-desc">
                         Sinh viên ngành Kỹ thuật Phần mềm tại trường Đại học Công nghệ TP.HCM (HUTECH). Đam mê xây dựng ứng dụng web mạnh mẽ, ứng dụng di động đa nền tảng và nghiên cứu các giải pháp Trí tuệ Nhân tạo (AI/ML).
                     </p>
                     <div class="hero-actions">
                         <a href="#projects" class="btn btn-primary" id="btn-hero-projects">
-                            <i class="fa-solid fa-code-branch"></i> Xem dự án
+                            <i class="fa-solid fa-code-branch"></i> <span data-i18n="hero-btn-projects">Xem dự án</span>
                         </a>
                         <a href="#contact" class="btn btn-secondary" id="btn-hero-contact">
-                            Liên hệ tôi <i class="fa-solid fa-arrow-right"></i>
+                            <span data-i18n="hero-btn-contact">Liên hệ tôi</span> <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                     <div class="hero-socials">
@@ -136,8 +151,8 @@
         <section id="about" class="about-section scroll-reveal">
             <div class="section-container">
                 <div class="section-header">
-                    <span class="section-tag">01. Về tôi</span>
-                    <h2 class="section-title">Câu Chuyện Của Tôi</h2>
+                    <span class="section-tag" data-i18n="about-tag">01. Về tôi</span>
+                    <h2 class="section-title" data-i18n="about-title">Câu Chuyện Của Tôi</h2>
                     <div class="section-line"></div>
                 </div>
                 
@@ -146,41 +161,41 @@
                     <div class="about-stats-grid">
                         <div class="stat-card glass-card">
                             <span class="stat-number">30+</span>
-                            <span class="stat-label">Kho lưu trữ GitHub</span>
+                            <span class="stat-label" data-i18n="about-stat1">Kho lưu trữ GitHub</span>
                         </div>
                         <div class="stat-card glass-card">
                             <span class="stat-number">3+</span>
-                            <span class="stat-label">Dự án cốt lõi</span>
+                            <span class="stat-label" data-i18n="about-stat2">Dự án cốt lõi</span>
                         </div>
                         <div class="stat-card glass-card">
                             <span class="stat-number">2026</span>
-                            <span class="stat-label">Đang học Kỹ sư HUTECH</span>
+                            <span class="stat-label" data-i18n="about-stat3">Đang học Kỹ sư HUTECH</span>
                         </div>
                         <div class="stat-card glass-card">
                             <span class="stat-number">100%</span>
-                            <span class="stat-label">Đam mê & Tâm huyết</span>
+                            <span class="stat-label" data-i18n="about-stat4">Đam mê & Tâm huyết</span>
                         </div>
                     </div>
                     
                     <!-- Right: Info Narrative -->
                     <div class="about-info-text">
-                        <h3>Tôi là ai?</h3>
-                        <p>
+                        <h3 data-i18n="about-who">Tôi là ai?</h3>
+                        <p data-i18n="about-p1">
                             Chào bạn! Tôi là một nhà phát triển phần mềm trẻ tuổi năng động tại Việt Nam. Hiện tôi đang là sinh viên theo học chuyên ngành <strong>Kỹ thuật Phần mềm</strong> tại Đại học Công nghệ TP.HCM (HUTECH).
                         </p>
-                        <p>
+                        <p data-i18n="about-p2">
                             Tôi yêu thích việc giải quyết các bài toán kỹ thuật từ cơ bản đến phức tạp. Từ việc thiết kế cơ sở dữ liệu quan hệ chặt chẽ đến việc lập trình giao diện người dùng mượt mà, tôi luôn cố gắng học hỏi và hoàn thiện sản phẩm của mình tốt nhất.
                         </p>
-                        <p>
+                        <p data-i18n="about-p3">
                             Hiện tại, tôi đang tập trung đi sâu nghiên cứu **Hệ sinh thái .NET (C#)**, kiến trúc hệ thống (System Architecture) và tìm hiểu sâu hơn về mô hình hóa 3D (3D Modeling) nhằm tạo nên các ứng dụng đột phá và toàn diện hơn trong tương lai.
                         </p>
                         
                         <div class="about-education glass-card">
                             <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                             <div class="edu-details">
-                                <h4>Đại học Công nghệ TP.HCM (HUTECH)</h4>
-                                <p>Ngành Kỹ thuật Phần mềm (Software Engineering)</p>
-                                <span class="edu-time">Đang theo học (Sinh viên)</span>
+                                <h4 data-i18n="about-edu-title">Đại học Công nghệ TP.HCM (HUTECH)</h4>
+                                <p data-i18n="about-edu-major">Ngành Kỹ thuật Phần mềm (Software Engineering)</p>
+                                <span class="edu-time" data-i18n="about-edu-status">Đang theo học (Sinh viên)</span>
                             </div>
                         </div>
                 </div>
@@ -205,72 +220,183 @@
                     </a>
                 </div>
             </div>
-        </section>
-
+        
         <!-- Skills Section -->
         <section id="skills" class="skills-section scroll-reveal">
             <div class="section-container">
-                <div class="section-header">
-                    <span class="section-tag">02. Kỹ năng</span>
-                    <h2 class="section-title">Công Nghệ & Công Cụ</h2>
+                <div class="section-header centered-header">
+                    <span class="section-tag" data-i18n="skills-tag">02. Kỹ năng</span>
+                    <h2 class="section-title">&lt; SKILLS /&gt;</h2>
                     <div class="section-line"></div>
                 </div>
                 
-                <div class="skills-grid">
-                    <!-- Core Backend & .NET -->
-                    <div class="skills-category glass-card">
-                        <div class="category-header">
-                            <i class="fa-solid fa-server icon-backend"></i>
-                            <h3>Backend & .NET Ecosystem</h3>
+                <div class="skills-grid-new">
+                    <!-- C# -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-csharp-plain colored"></i>
                         </div>
-                        <ul class="skills-list">
-                            <li><i class="fa-solid fa-circle-check"></i> C# Language</li>
-                            <li><i class="fa-solid fa-circle-check"></i> ASP.NET Core MVC</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Entity Framework Core</li>
-                            <li><i class="fa-solid fa-circle-check"></i> RESTful API</li>
-                        </ul>
+                        <span class="skill-name-new">C#</span>
+                    </div>
+                    
+                    <!-- .NET -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-dot-net-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">.NET Core</span>
+                    </div>
+                    
+                    <!-- ASP.NET Core -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-dotnetcore-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">ASP.NET Core</span>
+                    </div>
+                    
+                    <!-- EF Core -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="fa-solid fa-network-wired" style="color: #512bd4;"></i>
+                        </div>
+                        <span class="skill-name-new">EF Core</span>
+                    </div>
+                    
+                    <!-- SQL Server -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-microsoftsqlserver-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">SQL Server</span>
                     </div>
 
-                    <!-- Frontend & Mobile -->
-                    <div class="skills-category glass-card">
-                        <div class="category-header">
-                            <i class="fa-solid fa-mobile-screen icon-mobile"></i>
-                            <h3>Frontend & Mobile App</h3>
+                    <!-- Python -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-python-plain colored"></i>
                         </div>
-                        <ul class="skills-list">
-                            <li><i class="fa-solid fa-circle-check"></i> Flutter & Dart</li>
-                            <li><i class="fa-solid fa-circle-check"></i> HTML5 & CSS3</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Javascript (ES6+)</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Responsive UI Design</li>
-                        </ul>
+                        <span class="skill-name-new">Python</span>
                     </div>
 
-                    <!-- AI & Computer Vision -->
-                    <div class="skills-category glass-card">
-                        <div class="category-header">
-                            <i class="fa-solid fa-brain icon-ai"></i>
-                            <h3>AI & Computer Vision</h3>
+                    <!-- OpenCV -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-opencv-plain colored"></i>
                         </div>
-                        <ul class="skills-list">
-                            <li><i class="fa-solid fa-circle-check"></i> Python programming</li>
-                            <li><i class="fa-solid fa-circle-check"></i> OpenCV (Image Processing)</li>
-                            <li><i class="fa-solid fa-circle-check"></i> PCA (Eigenfaces Algorithm)</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Machine Learning Basics</li>
-                        </ul>
+                        <span class="skill-name-new">OpenCV</span>
                     </div>
 
-                    <!-- Databases & Infrastructure -->
-                    <div class="skills-category glass-card">
-                        <div class="category-header">
-                            <i class="fa-solid fa-database icon-db"></i>
-                            <h3>Database & Infrastructure</h3>
+                    <!-- NumPy -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-numpy-original colored"></i>
                         </div>
-                        <ul class="skills-list">
-                            <li><i class="fa-solid fa-circle-check"></i> SQL Server</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Firebase (Firestore, Auth)</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Git & Version Control</li>
-                            <li><i class="fa-solid fa-circle-check"></i> System Architecture</li>
-                        </ul>
+                        <span class="skill-name-new">NumPy</span>
+                    </div>
+
+                    <!-- PCA Algorithm -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="fa-solid fa-chart-line" style="color: #00f2fe;"></i>
+                        </div>
+                        <span class="skill-name-new">PCA / ML</span>
+                    </div>
+
+                    <!-- Flutter -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-flutter-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">Flutter</span>
+                    </div>
+
+                    <!-- Dart -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-dart-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">Dart</span>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-javascript-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">JavaScript</span>
+                    </div>
+
+                    <!-- TypeScript -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-typescript-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">TypeScript</span>
+                    </div>
+
+                    <!-- React -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-react-original colored"></i>
+                        </div>
+                        <span class="skill-name-new">React.js</span>
+                    </div>
+
+                    <!-- Vue.js -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-vuejs-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">Vue.js</span>
+                    </div>
+
+                    <!-- HTML5 -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-html5-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">HTML5</span>
+                    </div>
+
+                    <!-- CSS3 -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-css3-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">CSS3</span>
+                    </div>
+
+                    <!-- Firebase -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-firebase-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">Firebase</span>
+                    </div>
+
+                    <!-- Git -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-git-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">Git</span>
+                    </div>
+
+                    <!-- Docker -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-docker-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">Docker</span>
+                    </div>
+
+                    <!-- Node.js -->
+                    <div class="skill-card-new glass-card">
+                        <div class="skill-icon-new">
+                            <i class="devicon-nodejs-plain colored"></i>
+                        </div>
+                        <span class="skill-name-new">Node.js</span>
                     </div>
                 </div>
             </div>
@@ -280,8 +406,8 @@
         <section id="projects" class="projects-section scroll-reveal">
             <div class="section-container">
                 <div class="section-header">
-                    <span class="section-tag">03. Dự án</span>
-                    <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+                    <span class="section-tag" data-i18n="projects-tag">03. Dự án</span>
+                    <h2 class="section-title" data-i18n="projects-title">Sản Phẩm Nổi Bật</h2>
                     <div class="section-line"></div>
                 </div>
 
@@ -290,15 +416,15 @@
                     
                     <!-- Project 1: SmartCV AI Builder (Heart Project) -->
                     <div class="project-featured glass-card project-heart">
-                        <div class="project-heart-badge"><i class="fa-solid fa-heart animate-pulse"></i> DỰ ÁN TÂM HUYẾT NHẤT</div>
+                        <div class="project-heart-badge"><i class="fa-solid fa-heart animate-pulse"></i> <span data-i18n="project-heart-badge">DỰ ÁN TÂM HUYẾT NHẤT</span></div>
                         <div class="project-featured-image">
                             <img src="assets/project-smartcv.png" alt="SmartCV AI Website Dashboard Screenshot">
                             <div class="image-overlay"></div>
                         </div>
                         <div class="project-featured-info">
-                            <span class="project-number">Featured Project</span>
-                            <h3>SmartCV AI Builder</h3>
-                            <p class="project-featured-desc">
+                            <span class="project-number" data-i18n="project-num-featured">Featured Project</span>
+                            <h3 data-i18n="project1-title">SmartCV AI Builder</h3>
+                            <p class="project-featured-desc" data-i18n="project1-desc">
                                 Một nền tảng trực tuyến thông minh giúp người dùng xây dựng, quản lý và tối ưu hóa CV xin việc một cách chuyên nghiệp với sự trợ giúp đắc lực của Trí tuệ Nhân tạo. Nền tảng được xây dựng với giao diện hiện đại bằng React js và Vue js, kết hợp với hệ thống backend ASP.NET Core và SQL Server.
                             </p>
                             <ul class="project-tags">
@@ -309,7 +435,7 @@
                             </ul>
                             <div class="project-links">
                                 <a href="https://smartcv-ai.io.vn/" target="_blank" rel="noopener noreferrer" class="project-btn btn-live" id="link-smartcv-live">
-                                    <i class="fa-solid fa-earth-americas"></i> Xem Trực Tiếp (smartcv-ai.io.vn)
+                                    <i class="fa-solid fa-earth-americas"></i> <span data-i18n="project-btn-live">Xem Trực Tiếp (smartcv-ai.io.vn)</span>
                                 </a>
                                 <a href="https://github.com/KhoaSuyThan" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="GitHub Repo" id="link-smartcv-github">
                                     <i class="fa-brands fa-github"></i>
@@ -325,9 +451,9 @@
                             <div class="image-overlay"></div>
                         </div>
                         <div class="project-featured-info">
-                            <span class="project-number">Mobile Project</span>
-                            <h3>Smart Cooking & Community</h3>
-                            <p class="project-featured-desc">
+                            <span class="project-number" data-i18n="project-num-mobile">Mobile Project</span>
+                            <h3 data-i18n="project2-title">Smart Cooking & Community</h3>
+                            <p class="project-featured-desc" data-i18n="project2-desc">
                                 Ứng dụng di động đa nền tảng kết hợp mạng xã hội ẩm thực và trợ lý nấu ăn. Hỗ trợ khám phá hàng ngàn công thức nấu ăn trực tuyến, đồng bộ hóa thời gian thực qua cơ sở dữ liệu Firebase và hỗ trợ dịch thuật tự động công thức nấu ăn đa ngôn ngữ.
                             </p>
                             <ul class="project-tags">
@@ -351,9 +477,9 @@
                             <div class="image-overlay"></div>
                         </div>
                         <div class="project-featured-info">
-                            <span class="project-number">AI / Machine Learning Project</span>
-                            <h3>Face Recognition (PCA & OpenCV)</h3>
-                            <p class="project-featured-desc">
+                            <span class="project-number" data-i18n="project-num-ai">AI / Machine Learning Project</span>
+                            <h3 data-i18n="project3-title">Face Recognition (PCA & OpenCV)</h3>
+                            <p class="project-featured-desc" data-i18n="project3-desc">
                                 Hệ thống nhận diện khuôn mặt thời gian thực sử dụng camera giám sát. Dự án triển khai thuật toán Phân tích Thành phần Chính (PCA) để giảm số chiều đặc trưng (Eigenfaces) và tiến hành phân loại danh tính khuôn mặt chính xác trên bộ dữ liệu kiểm thử được thiết lập.
                             </p>
                             <ul class="project-tags">
@@ -377,16 +503,16 @@
         <section id="contact" class="contact-section scroll-reveal">
             <div class="section-container">
                 <div class="section-header">
-                    <span class="section-tag">04. Liên hệ</span>
-                    <h2 class="section-title">Kết Nối Với Tôi</h2>
+                    <span class="section-tag" data-i18n="contact-tag">04. Liên hệ</span>
+                    <h2 class="section-title" data-i18n="contact-title">Kết Nối Với Tôi</h2>
                     <div class="section-line"></div>
                 </div>
 
                 <div class="contact-grid">
                     <!-- Left side: contact details -->
                     <div class="contact-info">
-                        <h3>Hãy nói chuyện!</h3>
-                        <p>
+                        <h3 data-i18n="contact-heading">Hãy nói chuyện!</h3>
+                        <p data-i18n="contact-p">
                             Tôi luôn hào hứng học hỏi các dự án mã nguồn mở, cơ hội thực tập, việc làm mới hoặc các cuộc thảo luận kỹ thuật bổ ích. Đừng ngần ngại liên lạc với tôi qua biểu mẫu bên cạnh hoặc các mạng xã hội bên dưới!
                         </p>
                         
@@ -394,7 +520,7 @@
                             <div class="contact-item glass-card">
                                 <i class="fa-solid fa-envelope"></i>
                                 <div class="method-details">
-                                    <span>Gửi Email</span>
+                                    <span data-i18n="contact-email-label">Gửi Email</span>
                                     <a href="mailto:khoanv249@gmail.com">khoanv249@gmail.com</a>
                                 </div>
                             </div>
@@ -402,8 +528,8 @@
                             <div class="contact-item glass-card">
                                 <i class="fa-solid fa-location-dot"></i>
                                 <div class="method-details">
-                                    <span>Vị Trí</span>
-                                    <a href="https://www.google.com/maps?q=HUTECH+University+Ho+Chi+Minh" target="_blank" rel="noopener noreferrer">TP. Hồ Chí Minh, Việt Nam</a>
+                                    <span data-i18n="contact-loc-label">Vị Trí</span>
+                                    <a href="https://www.google.com/maps?q=HUTECH+University+Ho+Chi+Minh" target="_blank" rel="noopener noreferrer" data-i18n="contact-loc-val">TP. Hồ Chí Minh, Việt Nam</a>
                                 </div>
                             </div>
                         </div>
@@ -420,21 +546,21 @@
                         <form id="contact-form" autocomplete="off">
                             <div class="form-group">
                                 <input type="text" id="contact-name" name="name" required placeholder=" ">
-                                <label for="contact-name">Họ và tên</label>
+                                <label for="contact-name" data-i18n="form-name">Họ và tên</label>
                             </div>
                             
                             <div class="form-group">
                                 <input type="email" id="contact-email" name="email" required placeholder=" ">
-                                <label for="contact-email">Địa chỉ Email</label>
+                                <label for="contact-email" data-i18n="form-email">Địa chỉ Email</label>
                             </div>
 
                             <div class="form-group">
                                 <textarea id="contact-message" name="message" required placeholder=" " rows="5"></textarea>
-                                <label for="contact-message">Lời nhắn của bạn...</label>
+                                <label for="contact-message" data-i18n="form-msg">Lời nhắn của bạn...</label>
                             </div>
 
                             <button type="submit" id="contact-submit" class="btn btn-primary btn-submit">
-                                Gửi lời nhắn <i class="fa-solid fa-paper-plane"></i>
+                                <span data-i18n="form-submit">Gửi lời nhắn</span> <i class="fa-solid fa-paper-plane"></i>
                             </button>
                         </form>
                     </div>
@@ -446,8 +572,8 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-container">
-            <p>&copy; 2026 Nguyễn Võ Lê Khoa. All rights reserved.</p>
-            <p class="tech-stack-credit">Thiết kế tinh tế bằng HTML, CSS & JavaScript</p>
+            <p data-i18n="footer-copyright">&copy; 2026 Nguyễn Võ Lê Khoa. All rights reserved.</p>
+            <p class="tech-stack-credit" data-i18n="footer-credit">Thiết kế tinh tế bằng HTML, CSS & JavaScript</p>
         </div>
     </footer>
 
@@ -455,9 +581,9 @@
     <div class="notification-modal" id="form-modal">
         <div class="modal-content glass-card">
             <div class="modal-icon"><i class="fa-solid fa-circle-check animate-scale"></i></div>
-            <h3>Gửi thành công!</h3>
-            <p>Cảm ơn bạn đã gửi liên hệ. Tôi sẽ phản hồi lại bạn qua email sớm nhất có thể.</p>
-            <button class="btn btn-primary close-modal-btn" id="close-modal-btn">Đóng</button>
+            <h3 data-i18n="modal-success-title">Gửi thành công!</h3>
+            <p data-i18n="modal-success-msg">Cảm ơn bạn đã gửi liên hệ. Tôi sẽ phản hồi lại bạn qua email sớm nhất có thể.</p>
+            <button class="btn btn-primary close-modal-btn" id="close-modal-btn" data-i18n="modal-close">Đóng</button>
         </div>
     </div>
 
