@@ -715,55 +715,65 @@ section {
 /* ==========================================================================
    SKILLS SECTION
    ========================================================================== */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-}
-
-.skills-category {
-    padding: 32px;
-}
-
-.category-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 24px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.category-header i {
-    font-size: 1.5rem;
-}
-
-.icon-backend { color: #00f2fe; }
-.icon-mobile { color: #a259ff; }
-.icon-ai { color: #10b981; }
-.icon-db { color: #f59e0b; }
-
-.skills-list {
+.centered-header {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
 }
 
-.skills-list li {
+.centered-header .section-line {
+    margin: 15px auto 0 auto;
+}
+
+.skills-grid-new {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.skill-card-new {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 30px 16px;
+    text-align: center;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(10, 11, 22, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill-card-new:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 242, 254, 0.3);
+    background: rgba(16, 18, 30, 0.7);
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.1), 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skill-icon-new {
+    font-size: 2.8rem;
     display: flex;
     align-items: center;
-    gap: 12px;
-    color: var(--text-muted);
-    font-weight: 500;
+    justify-content: center;
+    height: 50px;
+    transition: transform 0.3s ease;
 }
 
-.skills-list li i {
-    color: var(--primary-color);
-    font-size: 0.95rem;
-}
-
-.skills-category:hover .skills-list li i {
+.skill-card-new:hover .skill-icon-new {
     transform: scale(1.1);
+}
+
+.skill-name-new {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
 }
 
 /* ==========================================================================
@@ -1276,6 +1286,9 @@ section {
     .project-featured-image {
         min-height: 250px;
     }
+    .skills-grid-new {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 
 /* Up to 768px (Mobile Devices) */
@@ -1368,10 +1381,97 @@ section {
         padding: 8px 20px;
         font-size: 0.85rem;
     }
+
+    .skills-grid-new {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+    
+    .skill-card-new {
+        padding: 20px 12px;
+        gap: 12px;
+    }
+    
+    .skill-icon-new {
+        font-size: 2.2rem;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .skills-grid-new {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+    
+    .skill-card-new {
+        padding: 16px 8px;
+        gap: 8px;
+        border-radius: 10px;
+    }
+    
+    .skill-icon-new {
+        font-size: 1.8rem;
+        height: 35px;
+    }
+    
+    .skill-name-new {
+        font-size: 0.8rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .header-actions .btn-cv {
         display: none;
     }
+}
+
+@media screen and (max-width: 380px) {
+    .skills-grid-new {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Language Switcher Styling */
+.lang-toggle {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.lang-toggle:hover {
+    border-color: rgba(0, 242, 254, 0.3);
+    color: var(--text-main);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
+}
+
+.lang-text {
+    transition: color 0.3s ease;
+}
+
+.lang-text.active {
+    color: var(--primary-color);
+}
+
+.lang-separator {
+    color: rgba(255, 255, 255, 0.2);
+    font-weight: 300;
+}
+
+.mobile-lang-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
