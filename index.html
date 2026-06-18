@@ -60,6 +60,9 @@
 
             <!-- Toggle Theme & Mobile Menu Button -->
             <div class="header-actions">
+                <a href="assets/CV.pdf" target="_blank" class="btn-cv" id="btn-cv-header">
+                    <i class="fa-solid fa-file-pdf"></i> CV của tôi
+                </a>
                 <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -77,6 +80,9 @@
             <a href="#skills" class="mobile-nav-link" id="mob-link-skills">Kỹ Năng</a>
             <a href="#projects" class="mobile-nav-link" id="mob-link-projects">Dự Án</a>
             <a href="#contact" class="mobile-nav-link" id="mob-link-contact">Liên Hệ</a>
+            <a href="assets/Nguyễn Võ Lê Khoa - Fullstack Developer Intern.pdf" target="_blank" class="mobile-nav-link btn-cv-mobile" id="mob-link-cv">
+                <i class="fa-solid fa-file-pdf"></i> CV của tôi
+            </a>
         </nav>
     </div>
 
@@ -177,7 +183,26 @@
                                 <span class="edu-time">Đang theo học (Sinh viên)</span>
                             </div>
                         </div>
-                    </div>
+                </div>
+            </div>
+            
+            <div class="about-social-row">
+                    <a href="https://github.com/KhoaSuyThan" target="_blank" rel="noopener noreferrer" class="about-social-pill pill-github">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nguy%E1%BB%85n-v%C3%B5-l%C3%AA-khoa-7994823b5/" target="_blank" rel="noopener noreferrer" class="about-social-pill pill-linkedin">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.facebook.com/lekhoa.nguyenvo.7" target="_blank" rel="noopener noreferrer" class="about-social-pill pill-facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="mailto:khoanv249@gmail.com" class="about-social-pill pill-gmail">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Gmail</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -343,69 +368,6 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- GitHub Repos Showcase -->
-                <div class="github-repos-showcase">
-                    <h3 class="repos-title"><i class="fa-solid fa-code-commit"></i> Các Dự Án Khác Trên GitHub</h3>
-                    
-                    <div class="repos-grid" id="repos-container">
-                        <!-- Repos will be injected dynamically via JS, static fallback shown below -->
-                        
-                        <!-- Fallback Card 1 -->
-                        <div class="repo-card glass-card">
-                            <div class="repo-header">
-                                <i class="fa-regular fa-folder-open folder-icon"></i>
-                                <div class="repo-links">
-                                    <a href="https://github.com/KhoaSuyThan/QuanLyBHXH" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-                                </div>
-                            </div>
-                            <h4>QuanLyBHXH</h4>
-                            <p class="repo-desc">Hệ thống quản lý thông tin Bảo Hiểm Xã Hội được lập trình bằng C#, quản lý danh sách người tham gia, lịch sử đóng và các chế độ chính sách BHXH.</p>
-                            <div class="repo-footer">
-                                <span class="repo-lang"><span class="lang-color lang-csharp"></span>C#</span>
-                                <span class="repo-stars"><i class="fa-regular fa-star"></i> 4</span>
-                            </div>
-                        </div>
-
-                        <!-- Fallback Card 2 -->
-                        <div class="repo-card glass-card">
-                            <div class="repo-header">
-                                <i class="fa-regular fa-folder-open folder-icon"></i>
-                                <div class="repo-links">
-                                    <a href="https://github.com/KhoaSuyThan/PhanLoaiRacThai" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-                                </div>
-                            </div>
-                            <h4>PhanLoaiRacThai</h4>
-                            <p class="repo-desc">Ứng dụng trang thông tin phân loại rác thải sinh hoạt, bảo vệ môi trường, cung cấp cẩm nang và cách phân loại rác hữu cơ, vô cơ.</p>
-                            <div class="repo-footer">
-                                <span class="repo-lang"><span class="lang-color lang-html"></span>HTML</span>
-                                <span class="repo-stars"><i class="fa-regular fa-star"></i> 4</span>
-                            </div>
-                        </div>
-
-                        <!-- Fallback Card 3 -->
-                        <div class="repo-card glass-card">
-                            <div class="repo-header">
-                                <i class="fa-regular fa-folder-open folder-icon"></i>
-                                <div class="repo-links">
-                                    <a href="https://github.com/KhoaSuyThan/QuanLyDongTien" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-                                </div>
-                            </div>
-                            <h4>QuanLyDongTien</h4>
-                            <p class="repo-desc">Dự án C# quản lý dòng tiền cá nhân và doanh nghiệp nhỏ, hỗ trợ lập biểu đồ báo cáo tài chính, doanh thu, chi phí chi tiết.</p>
-                            <div class="repo-footer">
-                                <span class="repo-lang"><span class="lang-color lang-csharp"></span>C#</span>
-                                <span class="repo-stars"><i class="fa-regular fa-star"></i> 4</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="repos-more-btn-container">
-                        <a href="https://github.com/KhoaSuyThan?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="btn-more-repos">
-                            Xem thêm trên GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
                     </div>
                 </div>
             </div>
