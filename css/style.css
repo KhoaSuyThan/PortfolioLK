@@ -552,7 +552,7 @@ section {
 
 .about-avatar-wrapper {
     width: 100%;
-    max-width: 320px;
+    max-width: 380px; /* Tăng kích thước ảnh từ 320px lên 380px */
     padding: 12px;
     border-radius: 24px;
     background: var(--card-bg);
@@ -585,20 +585,21 @@ section {
 .about-stats-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 12px; /* Giảm gap từ 20px xuống 12px */
     width: 100%;
+    max-width: 380px; /* Căn lề rộng bằng với ảnh đại diện */
 }
 
 .stat-card {
-    padding: 18px 12px;
+    padding: 12px 8px; /* Giảm padding giúp ô nhỏ gọn hơn */
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
 }
 
 .stat-number {
-    font-size: 2.0rem;
+    font-size: 1.6rem; /* Thu nhỏ cỡ chữ số */
     font-weight: 800;
     font-family: 'Outfit', sans-serif;
     background: var(--gradient-text);
@@ -607,7 +608,7 @@ section {
 }
 
 .stat-label {
-    font-size: 0.8rem;
+    font-size: 0.75rem; /* Thu nhỏ mô tả */
     color: var(--text-muted);
 }
 

@@ -595,8 +595,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================================================
-    // 7. CONTACT FORM SUBMISSION & MODAL
+    // 7. CONTACT FORM SUBMISSION & MODAL (Formspree Integration)
     // ==========================================================================
+    // HƯỚNG DẪN: Đăng ký tài khoản miễn phí tại https://formspree.io/
+    // Tạo một Form mới, copy ID của form (ví dụ: xv9jpdzo) và dán vào đây:
+    const FORMSPREE_FORM_ID = 'mrevnpbl'; 
+
     const contactForm = document.getElementById('contact-form');
     const formModal = document.getElementById('form-modal');
     const closeModalBtn = document.getElementById('close-modal-btn');
@@ -604,26 +608,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (contactForm && formModal && closeModalBtn) {
         
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            
+            const formData = new FormData(contactForm);
             
             // Set loading state
             const originalBtnText = submitBtn.innerHTML;
             submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Đang gửi <i class="fa-solid fa-spinner fa-spin"></i>';
+            submitBtn.innerHTML = currentLang === 'vi' ? 'Đang gửi <i class="fa-solid fa-spinner fa-spin"></i>' : 'Sending <i class="fa-solid fa-spinner fa-spin"></i>';
             
-            // Simulated secure api post / email dispatch
-            setTimeout(() => {
-                // Reset loading state
+            // Chạy chế độ giả lập nếu chưa cấu hình ID thực tế
+            if (FORMSPREE_FORM_ID === 'YOUR_FORMSPREE_FORM_ID') {
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                    contactForm.reset();
+                    formModal.classList.add('active');
+                }, 1200);
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                    contactForm.reset();
+                    
+                    // Show glassmorphic success modal
+                    formModal.classList.add('active');
+                } else {
+                    throw new Error('Formspree submission failed');
+                }
+            } catch (error) {
+                console.error('Lỗi khi gửi liên hệ:', error);
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
                 
-                // Reset form values
-                contactForm.reset();
-                
-                // Show glassmorphic success modal
-                formModal.classList.add('active');
-            }, 1500);
+                alert(currentLang === 'vi' 
+                    ? 'Có lỗi xảy ra khi gửi tin nhắn. Vui lòng liên hệ trực tiếp qua Email!' 
+                    : 'An error occurred while sending the message. Please contact me directly via Email!');
+            }
         });
 
         // Close modal listeners
