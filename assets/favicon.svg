@@ -5,8 +5,8 @@
       <stop offset="100%" stop-color="#a259ff" />
     </linearGradient>
   </defs>
-  <!-- Background circle -->
-  <circle cx="50" cy="50" r="45" fill="#070913" stroke="url(#glowGrad)" stroke-width="4" />
-  <!-- Text Logo -->
-  <text x="50%" y="59%" font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="26" fill="url(#glowGrad)" text-anchor="middle">&lt;LK/&gt;</text>
+  <!-- Stylized Hexagon with thick gradient border -->
+  <polygon points="50,8 90,31 90,79 50,92 10,79 10,31" fill="#080a16" stroke="url(#glowGrad)" stroke-width="8" stroke-linejoin="round" />
+  <!-- Monogram LK, very bold and white for high tab visibility -->
+  <text x="50%" y="64%" font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="42" fill="#ffffff" text-anchor="middle" letter-spacing="-1">LK</text>
 </svg>
