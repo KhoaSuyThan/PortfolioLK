@@ -136,9 +136,12 @@ document.addEventListener('DOMContentLoaded', () => {
             "project-num-mobile": "Mobile Project",
             "project2-title": "Smart Cooking & Community",
             "project2-desc": "Ứng dụng di động đa nền tảng kết hợp mạng xã hội ẩm thực và trợ lý nấu ăn. Hỗ trợ khám phá hàng ngàn công thức nấu ăn trực tuyến, đồng bộ hóa thời gian thực qua cơ sở dữ liệu Firebase và hỗ trợ dịch thuật tự động công thức nấu ăn đa ngôn ngữ.",
-            "project-num-ai": "AI / Machine Learning Project",
             "project3-title": "Face Recognition (PCA & OpenCV)",
             "project3-desc": "Hệ thống nhận diện khuôn mặt thời gian thực sử dụng camera giám sát. Dự án triển khai thuật toán Phân tích Thành phần Chính (PCA) để giảm số chiều đặc trưng (Eigenfaces) và tiến hành phân loại danh tính khuôn mặt chính xác trên bộ dữ liệu kiểm thử được thiết lập.",
+            "other-projects-title": "Các Dự Án Khác (GitHub)",
+            "github-loading": "Đang tải các dự án từ GitHub...",
+            "github-empty": "Không tìm thấy dự án công khai nào.",
+            "github-error": "Không thể tải các dự án từ GitHub lúc này. Vui lòng thử lại sau.",
             "contact-tag": "04. Liên hệ",
             "contact-title": "Kết Nối Với Tôi",
             "contact-heading": "Hãy nói chuyện!",
@@ -204,9 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
             "project-num-mobile": "Mobile Project",
             "project2-title": "Smart Cooking & Community",
             "project2-desc": "A cross-platform mobile application combining a culinary social network and a cooking assistant. Supports discovering thousands of online recipes, real-time synchronization via Firebase database, and automatic multilingual recipe translation.",
-            "project-num-ai": "AI / Machine Learning Project",
             "project3-title": "Face Recognition (PCA & OpenCV)",
             "project3-desc": "A real-time face recognition system using surveillance cameras. The project implements the Principal Component Analysis (PCA) algorithm to reduce feature dimensions (Eigenfaces) and performs accurate face identity classification on a custom test dataset.",
+            "other-projects-title": "Other Noteworthy Projects (GitHub)",
+            "github-loading": "Loading projects from GitHub...",
+            "github-empty": "No public projects found.",
+            "github-error": "Could not load GitHub projects at this time. Please try again later.",
             "contact-tag": "04. Contact",
             "contact-title": "Get In Touch",
             "contact-heading": "Let's talk!",
@@ -343,8 +349,87 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Fetch GitHub Projects dynamically
+    async function fetchGitHubProjects() {
+        const grid = document.getElementById('github-projects-grid');
+        if (!grid) return;
+
+        try {
+            const response = await fetch('https://api.github.com/users/KhoaSuyThan/repos?per_page=100');
+            if (!response.ok) {
+                throw new Error('Failed to fetch repositories');
+            }
+            const repos = await response.json();
+            
+            // Selected repositories to showcase in specific order
+            const selectedRepos = [
+                'ECO-PROTECTMNM', 
+                'Print3DWeb', 
+                'event-cert-soroban', 
+                'Hotel-Management-Secured', 
+                'Hotel-Management-System', 
+                'QuanLyDongTien'
+            ];
+            
+            // Filter and sort by the order defined in selectedRepos
+            const filteredRepos = repos
+                .filter(repo => selectedRepos.includes(repo.name))
+                .sort((a, b) => selectedRepos.indexOf(a.name) - selectedRepos.indexOf(b.name));
+
+            if (filteredRepos.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-repos">
+                        <p data-i18n="github-empty">${translations[currentLang]['github-empty'] || 'Không tìm thấy dự án công khai nào.'}</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = ''; // Clear loading state
+            
+            filteredRepos.forEach(repo => {
+                const card = document.createElement('div');
+                card.className = 'other-project-card glass-card';
+                
+                // Format programming language / tech
+                const lang = repo.language || 'HTML/CSS';
+                
+                // Format description (handle null)
+                const desc = repo.description || (currentLang === 'vi' ? 'Dự án nguồn mở trên GitHub.' : 'Open source project on GitHub.');
+                
+                card.innerHTML = `
+                    <div class="other-project-header">
+                        <i class="fa-regular fa-folder folder-icon"></i>
+                        <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="github-link-icon" aria-label="GitHub Repository">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <h4 class="other-project-card-title">${repo.name}</h4>
+                    <p class="other-project-card-desc">${desc}</p>
+                    <div class="other-project-footer">
+                        <span class="other-project-tech">${lang}</span>
+                        <div class="other-project-stats">
+                            <span><i class="fa-regular fa-star"></i> ${repo.stargazers_count}</span>
+                            <span><i class="fa-solid fa-code-fork"></i> ${repo.forks_count}</span>
+                        </div>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        } catch (error) {
+            console.error('Error fetching GitHub repos:', error);
+            grid.innerHTML = `
+                <div class="error-repos">
+                    <p data-i18n="github-error">${translations[currentLang]['github-error'] || 'Không thể tải các dự án từ GitHub lúc này.'}</p>
+                </div>
+            `;
+        }
+    }
+
     // Set language on page load
     setLanguage(currentLang);
+    fetchGitHubProjects();
 
     // ==========================================================================
     // 4. INTERACTIVE CANVAS PARTICLE BACKGROUND

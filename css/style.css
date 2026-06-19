@@ -1137,6 +1137,150 @@ section {
     color: var(--primary-color);
 }
 
+/* --- Other Noteworthy Projects (GitHub API) --- */
+.other-projects-container {
+    margin-top: 80px;
+    width: 100%;
+}
+
+.other-projects-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    text-align: center;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.other-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.other-project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(10, 11, 22, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 26px;
+    border-radius: 14px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    height: 100%;
+}
+
+.other-project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 242, 254, 0.3);
+    background: rgba(16, 18, 30, 0.7);
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.1), 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.other-project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.other-project-header .folder-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.other-project-header .github-link-icon {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    transition: var(--transition-normal);
+}
+
+.other-project-header .github-link-icon:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.other-project-card-title {
+    font-size: 1.15rem;
+    color: var(--text-main);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.other-project-card-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.other-project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 15px;
+}
+
+.other-project-tech {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.other-project-stats {
+    display: flex;
+    gap: 12px;
+}
+
+.other-project-stats span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Loading, Error and Empty states */
+.loading-repos, .error-repos, .empty-repos {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 60px 20px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    background: rgba(10, 11, 22, 0.2);
+    border-radius: 14px;
+    border: 1px dashed rgba(255, 255, 255, 0.05);
+    width: 100%;
+}
+
+.loading-repos i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.error-repos p, .empty-repos p {
+    text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+    .other-projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .other-projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ==========================================================================
    CONTACT SECTION
    ========================================================================== */
