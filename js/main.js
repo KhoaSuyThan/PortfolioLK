@@ -64,6 +64,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentSectionId) {
             updateActiveLinks(currentSectionId);
         }
+
+        // Back to Top Button visibility
+        const backToTopBtn = document.getElementById('back-to-top');
+        if (backToTopBtn) {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }
     });
 
     function updateActiveLinks(sectionId) {
@@ -155,6 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "form-submit": "Gửi lời nhắn",
             "footer-copyright": "&copy; 2026 Nguyễn Võ Lê Khoa. All rights reserved.",
             "footer-credit": "Thiết kế tinh tế bằng HTML, CSS & JavaScript",
+            "footer-desc-col": "Xây dựng các giải pháp phần mềm tối ưu, kiến tạo trải nghiệm người dùng tinh tế và khám phá tiềm năng của AI.",
+            "footer-heading-links": "Liên Kết Nhanh",
+            "footer-heading-contact": "Thông Tin Liên Hệ",
             "modal-success-title": "Gửi thành công!",
             "modal-success-msg": "Cảm ơn bạn đã gửi liên hệ. Tôi sẽ phản hồi lại bạn qua email sớm nhất có thể.",
             "modal-close": "Đóng"
@@ -226,6 +239,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "form-submit": "Send Message",
             "footer-copyright": "&copy; 2026 Nguyen Vo Le Khoa. All rights reserved.",
             "footer-credit": "Exquisitely designed with HTML, CSS & JavaScript",
+            "footer-desc-col": "Building optimal software solutions, crafting elegant user experiences, and exploring the potential of AI.",
+            "footer-heading-links": "Quick Links",
+            "footer-heading-contact": "Contact Info",
             "modal-success-title": "Message Sent!",
             "modal-success-msg": "Thank you for reaching out. I will respond to your email as soon as possible.",
             "modal-close": "Close"
@@ -669,6 +685,17 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === formModal) {
                 formModal.classList.remove('active');
             }
+        });
+    }
+
+    // Back to top click handler
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     }
 });
