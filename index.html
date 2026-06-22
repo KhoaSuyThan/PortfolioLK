@@ -625,9 +625,65 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-container">
-            <p data-i18n="footer-copyright">&copy; 2026 Nguyễn Võ Lê Khoa. All rights reserved.</p>
-            <p class="tech-stack-credit" data-i18n="footer-credit">Thiết kế tinh tế bằng HTML, CSS & JavaScript</p>
+            <div class="footer-top-row">
+                <!-- Column 1: Brand & Bio -->
+                <div class="footer-col footer-col-brand">
+                    <a href="#home" class="logo footer-logo" id="footer-nav-logo">
+                        <span class="bracket">&lt;</span>LeKhoa<span class="highlight">.Dev</span><span class="bracket">/&gt;</span>
+                    </a>
+                    <p class="footer-description" data-i18n="footer-desc-col">
+                        Xây dựng các giải pháp phần mềm tối ưu, kiến tạo trải nghiệm người dùng tinh tế và khám phá tiềm năng của AI.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://github.com/KhoaSuyThan" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/nguy%E1%BB%85n-v%C3%B5-l%C3%AA-khoa-7994823b5/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/lekhoa.nguyenvo.7" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/khoa1324142w/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col footer-col-links">
+                    <h4 class="footer-heading" data-i18n="footer-heading-links">Liên Kết Nhanh</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#home" data-i18n="nav-home">Trang Chủ</a></li>
+                        <li><a href="#about" data-i18n="nav-about">Giới Thiệu</a></li>
+                        <li><a href="#skills" data-i18n="nav-skills">Kỹ Năng</a></li>
+                        <li><a href="#projects" data-i18n="nav-projects">Dự Án</a></li>
+                        <li><a href="#contact" data-i18n="nav-contact">Liên Hệ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info -->
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-heading" data-i18n="footer-heading-contact">Thông Tin Liên Hệ</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:khoanv249@gmail.com">khoanv249@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span data-i18n="contact-loc-val">TP. Hồ Chí Minh, Việt Nam</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span data-i18n="about-edu-title">Đại học Công nghệ TP.HCM (HUTECH)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom-row">
+                <p class="copyright-text" data-i18n="footer-copyright">&copy; 2026 Nguyễn Võ Lê Khoa. All rights reserved.</p>
+            </div>
         </div>
+        <!-- Back to Top Button -->
+        <button id="back-to-top" class="back-to-top-btn" aria-label="Back to Top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
     </footer>
 
     <!-- Form Notification Modal (Glassmorphic) -->
