@@ -377,14 +377,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const repos = await response.json();
             
-            // Selected repositories to showcase in specific order
+            // Danh sách các repository GitHub được chọn để hiển thị theo thứ tự định sẵn
             const selectedRepos = [
                 'ECO-PROTECTMNM', 
                 'Print3DWeb', 
                 'event-cert-soroban', 
                 'Hotel-Management-Secured', 
                 'Hotel-Management-System', 
-                'QuanLyDongTien'
+                'AutomationTesting' 
             ];
             
             // Filter and sort by the order defined in selectedRepos
@@ -407,11 +407,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = document.createElement('div');
                 card.className = 'other-project-card glass-card';
                 
-                // Format programming language / tech
+                // Định dạng ngôn ngữ / công nghệ sử dụng
                 const lang = repo.language || 'HTML/CSS';
+
+                // Định dạng mô tả dự án (xử lý null và thêm ràng buộc phi thương mại cho các dự án được chỉ định)
+                let desc = repo.description;
+                const nonCommercialRepos = ['Print3DWeb', 'Hotel-Management-System', 'Hotel-Management-Secured'];
                 
-                // Format description (handle null)
-                const desc = repo.description || (currentLang === 'vi' ? 'Dự án nguồn mở trên GitHub.' : 'Open source project on GitHub.');
+                if (nonCommercialRepos.includes(repo.name)) {
+                    const restrictionText = currentLang === 'vi' 
+                        ? 'Không sử dụng thương mại dưới mọi hình thức.' 
+                        : 'Commercial use is strictly prohibited.';
+                    desc = desc ? `${desc} (${restrictionText})` : restrictionText;
+                } else if (!desc) {
+                    desc = currentLang === 'vi' ? 'Dự án nguồn mở trên GitHub.' : 'Open source project on GitHub.';
+                }
                 
                 card.innerHTML = `
                     <div class="other-project-header">
