@@ -68,7 +68,7 @@
                     <span class="lang-separator">|</span>
                     <span class="lang-text" id="lang-en">EN</span>
                 </button>
-                <a href="assets/CV.pdf" target="_blank" class="btn-cv" id="btn-cv-header">
+                <a href="assets/CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-cv" id="btn-cv-header">
                     <i class="fa-solid fa-file-pdf"></i> <span data-i18n="btn-cv">CV của tôi</span>
                 </a>
                 <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
@@ -88,7 +88,7 @@
             <a href="#skills" class="mobile-nav-link" id="mob-link-skills" data-i18n="nav-skills">Kỹ Năng</a>
             <a href="#projects" class="mobile-nav-link" id="mob-link-projects" data-i18n="nav-projects">Dự Án</a>
             <a href="#contact" class="mobile-nav-link" id="mob-link-contact" data-i18n="nav-contact">Liên Hệ</a>
-            <a href="assets/CV.pdf" target="_blank" class="mobile-nav-link btn-cv-mobile" id="mob-link-cv">
+            <a href="assets/CV.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link btn-cv-mobile" id="mob-link-cv">
                 <i class="fa-solid fa-file-pdf"></i> <span data-i18n="btn-cv">CV của tôi</span>
             </a>
             <div class="mobile-lang-container">
@@ -154,7 +154,7 @@
                     <div class="about-left-column">
                         <!-- Avatar Wrapper -->
                         <div class="about-avatar-wrapper glass-card">
-                            <img src="assets/avt.JPG" alt="Nguyễn Võ Lê Khoa Avatar" class="about-avatar">
+                            <img src="assets/avt.JPG" alt="Nguyễn Võ Lê Khoa Avatar" class="about-avatar" loading="lazy">
                         </div>
                         
                         <!-- Stats Grid -->
@@ -199,8 +199,8 @@
                                 <span class="edu-time" data-i18n="about-edu-status">Đang theo học (Sinh viên)</span>
                             </div>
                         </div>
+                    </div>
                 </div>
-            </div>
             
             <!-- Timeline Học Tập -->
             <div class="about-timeline-container">
@@ -223,18 +223,18 @@
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-badge active">3</div>
-                        <div class="timeline-card glass-card active-card">
-                            <span class="timeline-date" data-i18n="timeline-y3-date">2025 - 2026 (Hiện tại - Năm 3)</span>
+                        <div class="timeline-badge">3</div>
+                        <div class="timeline-card glass-card">
+                            <span class="timeline-date" data-i18n="timeline-y3-date">2025 - 2026</span>
                             <h4 data-i18n="timeline-y3-title">Năm 3: AI, Mobile & Dự Án Lớn</h4>
                             <p data-i18n="timeline-y3-desc">Nghiên cứu Machine Learning/AI (dự án Nhận diện khuôn mặt PCA), học Flutter phát triển ứng dụng di động (Smart Cooking). Thiết kế hệ thống web lớn, xây dựng SmartCV AI Builder (.NET Core, React, Vue) và tích cực tham gia Nghiên cứu khoa học tại HUTECH.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-badge">4</div>
-                        <div class="timeline-card glass-card">
-                            <span class="timeline-date" data-i18n="timeline-y4-date">2026 - 2027 (Kế hoạch)</span>
-                            <h4 data-i18n="timeline-y4-title">Năm 4: Thực Dự Án & Tốt Nghiệp</h4>
+                        <div class="timeline-badge active">4</div>
+                        <div class="timeline-card glass-card active-card">
+                            <span class="timeline-date" data-i18n="timeline-y4-date">2026 - 2027 (Hiện tại - Năm 4)</span>
+                            <h4 data-i18n="timeline-y4-title">Năm 4: Thực Chiến Dự Án & Tốt Nghiệp</h4>
                             <p data-i18n="timeline-y4-desc">Đầu năm 4 hướng tới tham gia các dự án thực tế tại doanh nghiệp để tích lũy kinh nghiệm thực chiến, đồng thời tập trung nghiên cứu và hoàn thành đồ án tốt nghiệp xuất sắc.</p>
                         </div>
                     </div>
@@ -459,7 +459,7 @@
                     <div class="project-featured glass-card project-heart">
                         <div class="project-heart-badge"><i class="fa-solid fa-heart animate-pulse"></i> <span data-i18n="project-heart-badge">DỰ ÁN TÂM HUYẾT NHẤT</span></div>
                         <div class="project-featured-image">
-                            <img src="assets/project-smartcv.png" alt="SmartCV AI Website Dashboard Screenshot">
+                            <img src="assets/project-smartcv.png" alt="SmartCV AI Website Dashboard Screenshot" loading="lazy">
                             <div class="image-overlay"></div>
                         </div>
                         <div class="project-featured-info">
@@ -488,7 +488,7 @@
                     <!-- Project 2: Smart Cooking App -->
                     <div class="project-featured glass-card reverse-layout">
                         <div class="project-featured-image">
-                            <img src="assets/project-cooking.png" alt="Smart Cooking Mobile App Screenshot">
+                            <img src="assets/project-cooking.png" alt="Smart Cooking Mobile App Screenshot" loading="lazy">
                             <div class="image-overlay"></div>
                         </div>
                         <div class="project-featured-info">
@@ -514,7 +514,7 @@
                     <!-- Project 3: Face Recognition System -->
                     <div class="project-featured glass-card">
                         <div class="project-featured-image">
-                            <img src="assets/project-face.png" alt="Real-time Face Recognition GUI Screenshot">
+                            <img src="assets/project-face.png" alt="Real-time Face Recognition GUI Screenshot" loading="lazy">
                             <div class="image-overlay"></div>
                         </div>
                         <div class="project-featured-info">
@@ -540,7 +540,7 @@
 
                 <!-- Other Noteworthy Projects (GitHub Dynamic API) -->
                 <div class="other-projects-container">
-                    <h3 class="other-projects-title" data-i18n="other-projects-title">Các Dự Án Khác</h3>
+                    <h3 class="other-projects-title" data-i18n="other-projects-title">Các Dự Án Khác (GitHub)</h3>
                     <div class="other-projects-grid" id="github-projects-grid">
                         <!-- Loading State -->
                         <div class="loading-repos">
