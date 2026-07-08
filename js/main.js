@@ -131,10 +131,10 @@ document.addEventListener('DOMContentLoaded', () => {
             "timeline-y2-desc": "Rèn luyện kỹ năng qua các bài tập lớn, thực hiện một số dự án nhỏ và làm quen với các công nghệ lập trình web căn bản.",
             "timeline-y3-title": "Năm 3: AI, Mobile & Dự Án Lớn",
             "timeline-y3-desc": "Nghiên cứu Machine Learning/AI (dự án Nhận diện khuôn mặt PCA), học Flutter phát triển ứng dụng di động (Smart Cooking). Thiết kế hệ thống web lớn, xây dựng SmartCV AI Builder (.NET Core, React, Vue) và tích cực tham gia Nghiên cứu khoa học tại HUTECH.",
-            "timeline-y3-date": "2025 - 2026 (Hiện tại - Năm 3)",
+            "timeline-y3-date": "2025 - 2026",
             "timeline-y4-title": "Năm 4: Thực Chiến Dự Án & Tốt Nghiệp",
             "timeline-y4-desc": "Đầu năm 4 hướng tới tham gia các dự án thực tế tại doanh nghiệp để tích lũy kinh nghiệm thực chiến, đồng thời tập trung nghiên cứu và hoàn thành đồ án tốt nghiệp xuất sắc.",
-            "timeline-y4-date": "2026 - 2027 (Kế hoạch)",
+            "timeline-y4-date": "2026 - 2027 (Hiện tại - Năm 4)",
             "skills-tag": "02. Kỹ năng",
             "projects-tag": "03. Dự án",
             "projects-title": "Sản Phẩm Nổi Bật",
@@ -205,10 +205,10 @@ document.addEventListener('DOMContentLoaded', () => {
             "timeline-y2-desc": "Practicing coding skills through assignments, building small personal projects, and learning basic web development technologies.",
             "timeline-y3-title": "Year 3: AI, Mobile & Core Projects",
             "timeline-y3-desc": "Researching Machine Learning/AI (PCA Face Recognition project), learning Flutter for mobile development (Smart Cooking app). Designing large web systems, building SmartCV AI Builder (.NET Core, React, Vue), and actively participating in Scientific Research at HUTECH.",
-            "timeline-y3-date": "2025 - 2026 (Current - Year 3)",
+            "timeline-y3-date": "2025 - 2026",
             "timeline-y4-title": "Year 4: Real-world Projects & Graduation",
             "timeline-y4-desc": "Aiming to participate in real-world corporate projects at the start of Year 4 to gain practical industry experience, while focusing on completing an outstanding graduation thesis.",
-            "timeline-y4-date": "2026 - 2027 (Planning)",
+            "timeline-y4-date": "2026 - 2027 (Current - Year 4)",
             "skills-tag": "02. Skills",
             "projects-tag": "03. Projects",
             "projects-title": "Featured Projects",
@@ -418,7 +418,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const restrictionText = currentLang === 'vi' 
                         ? 'Không sử dụng thương mại dưới mọi hình thức.' 
                         : 'Commercial use is strictly prohibited.';
-                    desc = desc ? `${desc} (${restrictionText})` : restrictionText;
+                    const defaultText = currentLang === 'vi'
+                        ? 'Dự án cá nhân trên GitHub.'
+                        : 'Personal project on GitHub.';
+                    desc = desc ? `${desc} (${restrictionText})` : `${defaultText} ${restrictionText}`;
                 } else if (!desc) {
                     desc = currentLang === 'vi' ? 'Dự án nguồn mở trên GitHub.' : 'Open source project on GitHub.';
                 }
