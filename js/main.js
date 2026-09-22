@@ -36,6 +36,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================================================
+    // 1.1. CV DROPDOWN INTERACTION (DESKTOP & TOUCH SCREENS)
+    // ==========================================================================
+    const cvDropdownWrapper = document.getElementById('cv-dropdown-wrapper');
+    const btnCvHeader = document.getElementById('btn-cv-header');
+    const cvDropdownMenu = document.getElementById('cv-dropdown-menu');
+
+    if (cvDropdownWrapper && btnCvHeader) {
+        // Toggle dropdown khi click vào nút chính
+        btnCvHeader.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = cvDropdownWrapper.classList.toggle('open');
+            btnCvHeader.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Đóng dropdown khi click vào link tải CV
+        if (cvDropdownMenu) {
+            cvDropdownMenu.querySelectorAll('.cv-dropdown-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    cvDropdownWrapper.classList.remove('open');
+                    btnCvHeader.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // Đóng dropdown khi click bên ngoài vùng menu
+        document.addEventListener('click', (e) => {
+            if (!cvDropdownWrapper.contains(e.target)) {
+                cvDropdownWrapper.classList.remove('open');
+                btnCvHeader.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    // ==========================================================================
     // 2. HEADER SCROLL EFFECT & SCROLL SPY (ACTIVE NAVIGATION)
     // ==========================================================================
     const header = document.getElementById('main-header');
@@ -105,6 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
             "nav-projects": "Dự Án",
             "nav-contact": "Liên Hệ",
             "btn-cv": "CV của tôi",
+            "cv-vi-title": "CV Tiếng Việt",
+            "cv-vi-desc": "Bản tiếng Việt (PDF)",
+            "cv-en-title": "English CV",
+            "cv-en-desc": "English Version (PDF)",
+            "cv-vi-btn": "CV Tiếng Việt",
+            "cv-en-btn": "English CV",
             "hero-welcome": "👋 Chào mừng bạn đến với không gian của tôi",
             "hero-greet": "Xin chào, tôi là <br><span class=\"highlight-gradient\">Nguyễn Võ Lê Khoa</span>",
             "hero-iam": "Tôi là một",
@@ -115,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "about-title": "Câu Chuyện Của Tôi",
             "about-stat1": "Kho lưu trữ GitHub",
             "about-stat2": "Dự án cốt lõi",
-            "about-stat3": "Đang học Kỹ sư HUTECH",
+            "about-stat3": "Đang học Kỹ sư tại HUTECH",
             "about-stat4": "Đam mê & Tâm huyết",
             "about-who": "Tôi là ai?",
             "about-p1": "Chào bạn! Tôi là một nhà phát triển phần mềm trẻ tuổi năng động tại Việt Nam. Hiện tôi đang là sinh viên theo học chuyên ngành <strong>Công nghệ phần mềm</strong> tại Đại học Công nghệ TP.HCM (HUTECH).",
@@ -123,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "about-p3": "Định hướng hiện tại của tôi là đi sâu nghiên cứu <strong>Hệ sinh thái .NET (C#)</strong> và thiết kế kiến trúc hệ thống (System Architecture). Đồng thời, tôi cũng đang tích cực tìm hiểu công nghệ mô hình hóa 3D (3D Modeling) nhằm mở rộng không gian tương tác số trong các ứng dụng tương lai.",
             "about-edu-title": "Đại học Công nghệ TP.HCM (HUTECH)",
             "about-edu-major": "Ngành Công nghệ phần mềm (Software Engineering)",
-            "about-edu-status": "Đang theo học (Sinh viên)",
+            "about-edu-status": "2023 - 2027 • Đang theo học",
             "about-timeline-title": "Lộ Trình Học Tập & Phát Triển",
             "timeline-y1-title": "Năm 1: Bắt Đầu Lập Trình",
             "timeline-y1-desc": "Bắt đầu làm quen với tư duy lập trình, học sâu về cấu trúc dữ liệu, giải thuật cơ bản và phát triển tư duy logic toán học.",
@@ -142,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
             "project-num-featured": "Featured Project",
             "project1-title": "SmartCV AI Builder",
             "project1-desc": "Một nền tảng trực tuyến thông minh giúp người dùng xây dựng, quản lý và tối ưu hóa CV xin việc một cách chuyên nghiệp với sự trợ giúp đắc lực của Trí tuệ Nhân tạo. Nền tảng được xây dựng với giao diện hiện đại bằng React js và Vue js, kết hợp với hệ thống backend ASP.NET Core và SQL Server.",
-            "project-btn-live": "Xem Trực Tiếp (smartcv-ai.io.vn)",
             "project-num-mobile": "Mobile Project",
             "project2-title": "Smart Cooking & Community",
             "project2-desc": "Ứng dụng di động đa nền tảng kết hợp mạng xã hội ẩm thực và trợ lý nấu ăn. Hỗ trợ khám phá hàng ngàn công thức nấu ăn trực tuyến, đồng bộ hóa thời gian thực qua cơ sở dữ liệu Firebase và hỗ trợ dịch thuật tự động công thức nấu ăn đa ngôn ngữ.",
@@ -178,7 +217,13 @@ document.addEventListener('DOMContentLoaded', () => {
             "nav-skills": "Skills",
             "nav-projects": "Projects",
             "nav-contact": "Contact",
-            "btn-cv": "My CV",
+            "btn-cv": "My Resume",
+            "cv-vi-title": "Vietnamese CV",
+            "cv-vi-desc": "Vietnamese Version (PDF)",
+            "cv-en-title": "English Resume",
+            "cv-en-desc": "English Version (PDF)",
+            "cv-vi-btn": "Vietnamese CV",
+            "cv-en-btn": "English CV",
             "hero-welcome": "👋 Welcome to my personal space",
             "hero-greet": "Hello, I am <br><span class=\"highlight-gradient\">Nguyen Vo Le Khoa</span>",
             "hero-iam": "I am a",
@@ -197,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "about-p3": "My current direction is to deep-dive into the <strong>.NET ecosystem (C#)</strong> and system architecture design. In parallel, I am actively exploring 3D modeling technologies to expand digital interactive spaces in future applications.",
             "about-edu-title": "Ho Chi Minh City University of Technology (HUTECH)",
             "about-edu-major": "Major: Software Engineering",
-            "about-edu-status": "Currently Studying (Student)",
+            "about-edu-status": "2023 - 2027 • In Progress",
             "about-timeline-title": "Learning & Development Timeline",
             "timeline-y1-title": "Year 1: Programming Foundations",
             "timeline-y1-desc": "Getting familiar with programming concepts, deep diving into data structures, basic algorithms, and developing logical thinking.",
@@ -216,7 +261,6 @@ document.addEventListener('DOMContentLoaded', () => {
             "project-num-featured": "Featured Project",
             "project1-title": "SmartCV AI Builder",
             "project1-desc": "An intelligent online platform that helps users build, manage, and optimize job resumes professionally with the help of Artificial Intelligence. The platform is built with a modern interface using React js and Vue js, combined with an ASP.NET Core and SQL Server backend.",
-            "project-btn-live": "Live Demo (smartcv-ai.io.vn)",
             "project-num-mobile": "Mobile Project",
             "project2-title": "Smart Cooking & Community",
             "project2-desc": "A cross-platform mobile application combining a culinary social network and a cooking assistant. Supports discovering thousands of online recipes, real-time synchronization via Firebase database, and automatic multilingual recipe translation.",
@@ -346,6 +390,11 @@ document.addEventListener('DOMContentLoaded', () => {
             typewriterElement.textContent = '';
             type();
         }
+
+        // Cập nhật lại mô tả dự án GitHub theo ngôn ngữ mới nếu đã tải dữ liệu
+        if (cachedGitHubRepos && typeof renderGitHubProjects === 'function') {
+            renderGitHubProjects(cachedGitHubRepos);
+        }
     }
 
     // Set up toggle buttons listeners
@@ -365,6 +414,110 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Lưu cache repo để cập nhật lại khi đổi ngôn ngữ
+    let cachedGitHubRepos = null;
+
+    // Mô tả ngắn gọn, ý nghĩa cho từng dự án GitHub (hỗ trợ cả Tiếng Việt và Tiếng Anh)
+    const repoDescriptions = {
+        'ECO-PROTECTMNM': {
+            vi: 'Nền tảng web hỗ trợ phân loại rác thải, nâng cao ý thức bảo vệ môi trường và kết nối cộng đồng xanh.',
+            en: 'Web platform for waste sorting guidance, environmental awareness, and green community engagement.'
+        },
+        'Print3DWeb': {
+            vi: 'Nền tảng thương mại dịch vụ in 3D trực tuyến, hỗ trợ xem trước mô hình 3D và đặt in theo yêu cầu.',
+            en: 'Online 3D printing commercial platform featuring 3D model preview and on-demand custom printing.'
+        },
+        'event-cert-soroban': {
+            vi: 'Hợp đồng thông minh trên Stellar Soroban phát hành và xác thực chứng chỉ sự kiện số trên Blockchain.',
+            en: 'Smart contract on Stellar Soroban for issuing and verifying digital certificates on Blockchain.'
+        },
+        'Hotel-Management-Secured': {
+            vi: 'Hệ thống quản lý khách sạn bảo mật cao, phân quyền người dùng chặt chẽ và phòng chống lỗ hổng bảo mật.',
+            en: 'Secure hotel management system with strict role-based access control and security safeguards.'
+        },
+        'Hotel-Management-System': {
+            vi: 'Phần mềm desktop quản lý khách sạn toàn diện: sơ đồ phòng, đặt phòng, dịch vụ và xuất hóa đơn.',
+            en: 'Comprehensive desktop hotel management software for room layout, booking, services, and billing.'
+        },
+        'AutomationTesting': {
+            vi: 'Bộ kịch bản kiểm thử tự động toàn diện kiểm tra hồi quy luồng nghiệp vụ giao diện UI và RESTful API.',
+            en: 'Automated test suite covering web UI user flows and RESTful API regression testing.'
+        }
+    };
+
+    function renderGitHubProjects(repos) {
+        const grid = document.getElementById('github-projects-grid');
+        if (!grid) return;
+
+        // Danh sách các repository GitHub được chọn để hiển thị theo thứ tự định sẵn
+        const selectedRepos = [
+            'ECO-PROTECTMNM', 
+            'Print3DWeb', 
+            'event-cert-soroban', 
+            'Hotel-Management-Secured', 
+            'Hotel-Management-System', 
+            'AutomationTesting' 
+        ];
+        
+        // Filter and sort by the order defined in selectedRepos
+        const filteredRepos = repos
+            .filter(repo => selectedRepos.includes(repo.name))
+            .sort((a, b) => selectedRepos.indexOf(a.name) - selectedRepos.indexOf(b.name));
+
+        if (filteredRepos.length === 0) {
+            grid.innerHTML = `
+                <div class="empty-repos">
+                    <p data-i18n="github-empty">${translations[currentLang]['github-empty'] || 'Không tìm thấy dự án công khai nào.'}</p>
+                </div>
+            `;
+            return;
+        }
+
+        grid.innerHTML = ''; // Clear loading state
+        
+        filteredRepos.forEach(repo => {
+            const card = document.createElement('div');
+            card.className = 'other-project-card glass-card';
+            
+            // Định dạng ngôn ngữ / công nghệ sử dụng
+            const lang = repo.language || 'HTML/CSS';
+
+            // Gán mô tả ngắn gọn, ý nghĩa cho từng dự án
+            let desc = '';
+            if (repoDescriptions[repo.name]) {
+                desc = repoDescriptions[repo.name][currentLang] || repoDescriptions[repo.name]['vi'];
+            } else if (repo.description) {
+                desc = repo.description;
+            } else {
+                desc = currentLang === 'vi' ? 'Dự án mã nguồn mở trên GitHub.' : 'Open source project on GitHub.';
+            }
+            
+            card.innerHTML = `
+                <div class="other-project-header">
+                    <div class="other-project-icon-box">
+                        <i class="fa-regular fa-folder folder-icon"></i>
+                    </div>
+                    <h4 class="other-project-card-title" title="${repo.name}">${repo.name}</h4>
+                    <div class="other-project-link-box">
+                        <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="github-link-icon" aria-label="GitHub Repository">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <p class="other-project-card-desc">${desc}</p>
+                <div class="other-project-footer">
+                    <span class="other-project-tech">${lang}</span>
+                    <div class="other-project-stats">
+                        <span><i class="fa-regular fa-star"></i> ${repo.stargazers_count}</span>
+                        <span><i class="fa-solid fa-code-fork"></i> ${repo.forks_count}</span>
+                    </div>
+                </div>
+            `;
+            
+            grid.appendChild(card);
+        });
+    }
+
     // Fetch GitHub Projects dynamically
     async function fetchGitHubProjects() {
         const grid = document.getElementById('github-projects-grid');
@@ -376,76 +529,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Failed to fetch repositories');
             }
             const repos = await response.json();
-            
-            // Danh sách các repository GitHub được chọn để hiển thị theo thứ tự định sẵn
-            const selectedRepos = [
-                'ECO-PROTECTMNM', 
-                'Print3DWeb', 
-                'event-cert-soroban', 
-                'Hotel-Management-Secured', 
-                'Hotel-Management-System', 
-                'AutomationTesting' 
-            ];
-            
-            // Filter and sort by the order defined in selectedRepos
-            const filteredRepos = repos
-                .filter(repo => selectedRepos.includes(repo.name))
-                .sort((a, b) => selectedRepos.indexOf(a.name) - selectedRepos.indexOf(b.name));
-
-            if (filteredRepos.length === 0) {
-                grid.innerHTML = `
-                    <div class="empty-repos">
-                        <p data-i18n="github-empty">${translations[currentLang]['github-empty'] || 'Không tìm thấy dự án công khai nào.'}</p>
-                    </div>
-                `;
-                return;
-            }
-
-            grid.innerHTML = ''; // Clear loading state
-            
-            filteredRepos.forEach(repo => {
-                const card = document.createElement('div');
-                card.className = 'other-project-card glass-card';
-                
-                // Định dạng ngôn ngữ / công nghệ sử dụng
-                const lang = repo.language || 'HTML/CSS';
-
-                // Định dạng mô tả dự án (xử lý null và thêm ràng buộc phi thương mại cho các dự án được chỉ định)
-                let desc = repo.description;
-                const nonCommercialRepos = ['Print3DWeb', 'Hotel-Management-System', 'Hotel-Management-Secured'];
-                
-                if (nonCommercialRepos.includes(repo.name)) {
-                    const restrictionText = currentLang === 'vi' 
-                        ? 'Không sử dụng thương mại dưới mọi hình thức.' 
-                        : 'Commercial use is strictly prohibited.';
-                    const defaultText = currentLang === 'vi'
-                        ? 'Dự án cá nhân trên GitHub.'
-                        : 'Personal project on GitHub.';
-                    desc = desc ? `${desc} (${restrictionText})` : `${defaultText} ${restrictionText}`;
-                } else if (!desc) {
-                    desc = currentLang === 'vi' ? 'Dự án nguồn mở trên GitHub.' : 'Open source project on GitHub.';
-                }
-                
-                card.innerHTML = `
-                    <div class="other-project-header">
-                        <i class="fa-regular fa-folder folder-icon"></i>
-                        <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="github-link-icon" aria-label="GitHub Repository">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                    <h4 class="other-project-card-title">${repo.name}</h4>
-                    <p class="other-project-card-desc">${desc}</p>
-                    <div class="other-project-footer">
-                        <span class="other-project-tech">${lang}</span>
-                        <div class="other-project-stats">
-                            <span><i class="fa-regular fa-star"></i> ${repo.stargazers_count}</span>
-                            <span><i class="fa-solid fa-code-fork"></i> ${repo.forks_count}</span>
-                        </div>
-                    </div>
-                `;
-                
-                grid.appendChild(card);
-            });
+            cachedGitHubRepos = repos;
+            renderGitHubProjects(repos);
         } catch (error) {
             console.error('Error fetching GitHub repos:', error);
             grid.innerHTML = `

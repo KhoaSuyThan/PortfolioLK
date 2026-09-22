@@ -68,9 +68,30 @@
                     <span class="lang-separator">|</span>
                     <span class="lang-text" id="lang-en">EN</span>
                 </button>
-                <a href="assets/Nguyễn Võ Lê Khoa.pdf" target="_blank" rel="noopener noreferrer" class="btn-cv" id="btn-cv-header">
-                    <i class="fa-solid fa-file-pdf"></i> <span data-i18n="btn-cv">CV của tôi</span>
-                </a>
+                <!-- CV Dropdown Desktop -->
+                <div class="cv-dropdown-wrapper" id="cv-dropdown-wrapper">
+                    <button type="button" class="btn-cv" id="btn-cv-header" aria-expanded="false" aria-haspopup="true">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <span data-i18n="btn-cv">CV của tôi</span>
+                        <i class="fa-solid fa-chevron-down cv-arrow"></i>
+                    </button>
+                    <div class="cv-dropdown-menu" id="cv-dropdown-menu">
+                        <a href="assets/CV_Fullstack_Developer_Nguyen_Vo_Le_Khoa_VI.pdf" target="_blank" rel="noopener noreferrer" class="cv-dropdown-item" id="cv-item-vi">
+                            <span class="cv-flag">🇻🇳</span>
+                            <div class="cv-item-text">
+                                <span class="cv-item-title" data-i18n="cv-vi-title">CV Tiếng Việt</span>
+                                <span class="cv-item-desc" data-i18n="cv-vi-desc">Bản tiếng Việt (PDF)</span>
+                            </div>
+                        </a>
+                        <a href="assets/CV_Fullstack_Developer_Nguyen_Vo_Le_Khoa_EN.pdf" target="_blank" rel="noopener noreferrer" class="cv-dropdown-item" id="cv-item-en">
+                            <span class="cv-flag">🇬🇧</span>
+                            <div class="cv-item-text">
+                                <span class="cv-item-title" data-i18n="cv-en-title">English CV</span>
+                                <span class="cv-item-desc" data-i18n="cv-en-desc">English Version (PDF)</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
                 <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -88,9 +109,16 @@
             <a href="#skills" class="mobile-nav-link" id="mob-link-skills" data-i18n="nav-skills">Kỹ Năng</a>
             <a href="#projects" class="mobile-nav-link" id="mob-link-projects" data-i18n="nav-projects">Dự Án</a>
             <a href="#contact" class="mobile-nav-link" id="mob-link-contact" data-i18n="nav-contact">Liên Hệ</a>
-            <a href="assets/Nguyễn Võ Lê Khoa.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link btn-cv-mobile" id="mob-link-cv">
-                <i class="fa-solid fa-file-pdf"></i> <span data-i18n="btn-cv">CV của tôi</span>
-            </a>
+            
+            <!-- Mobile CV Options (Tiếng Việt & Tiếng Anh) -->
+            <div class="mobile-cv-group">
+                <a href="assets/CV_Fullstack_Developer_Nguyen_Vo_Le_Khoa_VI.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link btn-cv-mobile" id="mob-link-cv-vi">
+                    <i class="fa-solid fa-file-pdf"></i> <span data-i18n="cv-vi-btn">CV Tiếng Việt</span>
+                </a>
+                <a href="assets/CV_Fullstack_Developer_Nguyen_Vo_Le_Khoa_EN.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link btn-cv-mobile btn-cv-mobile-en" id="mob-link-cv-en">
+                    <i class="fa-solid fa-file-pdf"></i> <span data-i18n="cv-en-btn">English CV</span>
+                </a>
+            </div>
             <div class="mobile-lang-container">
                 <button class="lang-toggle" id="mob-lang-toggle-btn" aria-label="Toggle Language Mobile">
                     <span class="lang-text active" id="mob-lang-vi">VI</span>
@@ -169,7 +197,7 @@
                             </div>
                             <div class="stat-card glass-card">
                                 <span class="stat-number">2026</span>
-                                <span class="stat-label" data-i18n="about-stat3">Đang học Kỹ sư HUTECH</span>
+                                <span class="stat-label" data-i18n="about-stat3">Đang học Kỹ sư tại HUTECH</span>
                             </div>
                             <div class="stat-card glass-card">
                                 <span class="stat-number">100%</span>
@@ -192,11 +220,15 @@
                         </p>
                         
                         <div class="about-education glass-card">
-                            <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                            <div class="edu-details">
-                                <h4 data-i18n="about-edu-title">Đại học Công nghệ TP.HCM (HUTECH)</h4>
-                                <p data-i18n="about-edu-major">Ngành Công nghệ phần mềm (Software Engineering)</p>
-                                <span class="edu-time" data-i18n="about-edu-status">Đang theo học (Sinh viên)</span>
+                            <div class="edu-left">
+                                <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <div class="edu-details">
+                                    <h4 data-i18n="about-edu-title">Đại học Công nghệ TP.HCM (HUTECH)</h4>
+                                    <p data-i18n="about-edu-major">Ngành Công nghệ phần mềm (Software Engineering)</p>
+                                </div>
+                            </div>
+                            <div class="edu-badge">
+                                <span class="edu-time" data-i18n="about-edu-status">2023 - 2027 • Đang theo học</span>
                             </div>
                         </div>
                     </div>
@@ -431,14 +463,6 @@
                         </div>
                         <span class="skill-name-new">Docker</span>
                     </div>
-
-                    <!-- Node.js -->
-                    <div class="skill-card-new glass-card">
-                        <div class="skill-icon-new">
-                            <i class="devicon-nodejs-plain colored"></i>
-                        </div>
-                        <span class="skill-name-new">Node.js</span>
-                    </div>
                 </div>
             </div>
         </section>
@@ -463,8 +487,15 @@
                             <div class="image-overlay"></div>
                         </div>
                         <div class="project-featured-info">
-                            <span class="project-number" data-i18n="project-num-featured">Featured Project</span>
-                            <h3 data-i18n="project1-title">SmartCV AI Builder</h3>
+                            <div class="project-header-group">
+                                <span class="project-number" data-i18n="project-num-featured">Featured Project</span>
+                                <div class="project-title-row">
+                                    <h3 data-i18n="project1-title">SmartCV AI Builder</h3>
+                                    <a href="https://github.com/KhoaSuyThan" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="GitHub Repo" id="link-smartcv-github">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
                             <p class="project-featured-desc" data-i18n="project1-desc">
                                 Một nền tảng trực tuyến thông minh giúp người dùng xây dựng, quản lý và tối ưu hóa CV xin việc một cách chuyên nghiệp với sự trợ giúp đắc lực của Trí tuệ Nhân tạo. Nền tảng được xây dựng với giao diện hiện đại bằng React js và Vue js, kết hợp với hệ thống backend ASP.NET Core và SQL Server.
                             </p>
@@ -474,14 +505,6 @@
                                 <li>ASP.NET Core MVC</li>
                                 <li>SQL Server</li>
                             </ul>
-                            <div class="project-links">
-                                <a href="https://smartcv-ai.io.vn/" target="_blank" rel="noopener noreferrer" class="project-btn btn-live" id="link-smartcv-live">
-                                    <i class="fa-solid fa-earth-americas"></i> <span data-i18n="project-btn-live">Xem Trực Tiếp (smartcv-ai.io.vn)</span>
-                                </a>
-                                <a href="https://github.com/KhoaSuyThan" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="GitHub Repo" id="link-smartcv-github">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                            </div>
                         </div>
                     </div>
 
@@ -492,8 +515,15 @@
                             <div class="image-overlay"></div>
                         </div>
                         <div class="project-featured-info">
-                            <span class="project-number" data-i18n="project-num-mobile">Mobile Project</span>
-                            <h3 data-i18n="project2-title">Smart Cooking & Community</h3>
+                            <div class="project-header-group">
+                                <span class="project-number" data-i18n="project-num-mobile">Mobile Project</span>
+                                <div class="project-title-row">
+                                    <h3 data-i18n="project2-title">Smart Cooking & Community</h3>
+                                    <a href="https://github.com/nguyennhatnam213654-creator/DoAnApp" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="GitHub Repo" id="link-cooking-github">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
                             <p class="project-featured-desc" data-i18n="project2-desc">
                                 Ứng dụng di động đa nền tảng kết hợp mạng xã hội ẩm thực và trợ lý nấu ăn. Hỗ trợ khám phá hàng ngàn công thức nấu ăn trực tuyến, đồng bộ hóa thời gian thực qua cơ sở dữ liệu Firebase và hỗ trợ dịch thuật tự động công thức nấu ăn đa ngôn ngữ.
                             </p>
@@ -503,11 +533,6 @@
                                 <li>Firebase Firestore</li>
                                 <li>TheMealDB API</li>
                             </ul>
-                            <div class="project-links">
-                                <a href="https://github.com/nguyennhatnam213654-creator/DoAnApp" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="GitHub Repo" id="link-cooking-github">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                            </div>
                         </div>
                     </div>
 
@@ -518,8 +543,15 @@
                             <div class="image-overlay"></div>
                         </div>
                         <div class="project-featured-info">
-                            <span class="project-number" data-i18n="project-num-ai">AI / Machine Learning Project</span>
-                            <h3 data-i18n="project3-title">Face Recognition (PCA & OpenCV)</h3>
+                            <div class="project-header-group">
+                                <span class="project-number" data-i18n="project-num-ai">AI / Machine Learning Project</span>
+                                <div class="project-title-row">
+                                    <h3 data-i18n="project3-title">Face Recognition (PCA & OpenCV)</h3>
+                                    <a href="https://github.com/KhoaSuyThan/FaceRecognitionPCA" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="GitHub Repo" id="link-face-github">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
                             <p class="project-featured-desc" data-i18n="project3-desc">
                                 Hệ thống nhận diện khuôn mặt thời gian thực sử dụng camera giám sát. Dự án triển khai thuật toán Phân tích Thành phần Chính (PCA) để giảm số chiều đặc trưng (Eigenfaces) và tiến hành phân loại danh tính khuôn mặt chính xác trên bộ dữ liệu kiểm thử được thiết lập.
                             </p>
@@ -529,11 +561,6 @@
                                 <li>PCA Algorithm</li>
                                 <li>NumPy / SciPy</li>
                             </ul>
-                            <div class="project-links">
-                                <a href="https://github.com/KhoaSuyThan/FaceRecognitionPCA" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="GitHub Repo" id="link-face-github">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -608,7 +635,7 @@
                             </div>
 
                             <div class="form-group">
-                                <textarea id="contact-message" name="message" required placeholder=" " rows="5"></textarea>
+                                <textarea id="contact-message" name="message" required placeholder=" " rows="3"></textarea>
                                 <label for="contact-message" data-i18n="form-msg">Lời nhắn của bạn...</label>
                             </div>
 
