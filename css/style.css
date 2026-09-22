@@ -288,6 +288,7 @@ header.scrolled {
     background: var(--gradient-primary);
     color: var(--text-dark);
     border: none;
+    cursor: pointer;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
 }
@@ -303,25 +304,133 @@ header.scrolled {
     font-size: 0.95rem;
 }
 
-.btn-cv-mobile {
+.btn-cv .cv-arrow {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+    margin-left: 2px;
+}
+
+/* CV Dropdown Container */
+.cv-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.cv-dropdown-wrapper:hover .cv-arrow,
+.cv-dropdown-wrapper.open .cv-arrow {
+    transform: rotate(180deg);
+}
+
+.cv-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 220px;
+    background: rgba(11, 15, 29, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 242, 254, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1000;
+}
+
+.cv-dropdown-wrapper:hover .cv-dropdown-menu,
+.cv-dropdown-wrapper.open .cv-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.cv-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.cv-dropdown-item:hover {
+    background: rgba(0, 242, 254, 0.08);
+    border-color: rgba(0, 242, 254, 0.25);
+    transform: translateX(4px);
+}
+
+.cv-dropdown-item .cv-flag {
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.cv-dropdown-item .cv-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cv-dropdown-item .cv-item-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.cv-dropdown-item .cv-item-desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.cv-dropdown-item:hover .cv-item-title {
+    color: var(--secondary-color);
+}
+
+/* Mobile CV Group */
+.mobile-cv-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin: 10px 0;
+    width: 100%;
+}
+
+.btn-cv-mobile {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     background: var(--gradient-primary);
     color: var(--text-dark) !important;
-    padding: 12px 24px;
+    padding: 12px 20px;
     border-radius: 30px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     border: none;
     box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-cv-mobile-en {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main) !important;
+    border: 1px solid rgba(0, 242, 254, 0.35);
+    box-shadow: none;
 }
 
 .btn-cv-mobile:hover {
     box-shadow: var(--box-shadow-neon);
     opacity: 0.95;
+    transform: translateY(-2px);
 }
 
 /* Mobile drawer navigation */
@@ -978,22 +1087,39 @@ section {
 .projects-featured-container {
     display: flex;
     flex-direction: column;
-    gap: 60px;
-    margin-bottom: 80px;
+    gap: 45px;
+    margin-bottom: 60px;
+    width: 100%;
 }
 
 .project-featured {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
+    grid-template-columns: 58% 42%; /* 58% ảnh, 42% chữ cân đối và thoáng đãng */
+    gap: 16px;
     overflow: hidden;
     position: relative;
-    border-radius: 20px;
+    border-radius: 16px;
     border: 1px solid var(--card-border);
+    width: 70%; /* Thu nhỏ 70% so với ban đầu */
+    height: 360px; /* Khóa chiều cao cố định đồng nhất và thoải mái cho cả 3 card */
+    transition: var(--transition-normal);
+}
+
+/* Kiểu Zigzag: Lệch so le sang trái và sang phải */
+.project-featured:nth-child(odd) {
+    align-self: flex-start;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.project-featured:nth-child(even) {
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .project-featured.reverse-layout {
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: 42% 58%; /* 42% chữ, 58% ảnh */
 }
 
 .project-featured.reverse-layout .project-featured-image {
@@ -1002,6 +1128,7 @@ section {
 
 .project-featured.reverse-layout .project-featured-info {
     order: 1;
+    padding: 20px 28px 20px 34px; /* Cách viền mép trái rộng rãi, không bị dính sát viền */
 }
 
 /* Special styling for Heart project */
@@ -1017,26 +1144,25 @@ section {
 
 .project-heart-badge {
     position: absolute;
-    top: 10px; /* Cách viền trên đúng 20px */
+    top: 10px;
     left: 10px;
     background: var(--gradient-secondary);
     color: white;
-    padding: 6px 16px;
+    padding: 4px 12px;
     border-radius: 30px;
-    font-size: 0.8rem;
+    font-size: 0.72rem;
     font-weight: 700;
     z-index: 10;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     box-shadow: 0 4px 15px rgba(162, 89, 255, 0.4);
 }
 
 .project-featured-image {
     position: relative;
     height: 100%;
-    min-height: 300px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.25);
     overflow: hidden;
 }
 
@@ -1044,11 +1170,12 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center; /* Cân đối ảnh trọn vẹn cho cả 3 card */
     transition: var(--transition-slow);
 }
 
 .project-featured:hover .project-featured-image img {
-    transform: scale(1.05) rotate(1deg);
+    transform: scale(1.03);
 }
 
 .image-overlay {
@@ -1057,62 +1184,116 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(7, 9, 19, 0.6) 0%, rgba(7, 9, 19, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(7, 9, 19, 0.5) 0%, rgba(7, 9, 19, 0.05) 100%);
     mix-blend-mode: multiply;
 }
 
 .project-featured-info {
-    padding: 40px;
+    padding: 20px 34px 20px 28px; /* Cách viền mép ngoài rộng rãi, thanh lịch */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 10px;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Nhóm tiêu đề gắn kết liền mạch */
+.project-header-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
 }
 
 .project-number {
     color: var(--primary-color);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
+    letter-spacing: 0.08em;
+    margin: 0;
+    line-height: 1.2;
+    width: 80%; /* Đồng bộ căn giữa theo tên dự án */
+    text-align: center;
 }
 
-.project-featured-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 16px;
+/* Hàng ngang: Tên dự án chiếm 80% căn giữa, Icon GitHub chiếm 20% còn lại */
+.project-title-row {
+    display: grid;
+    grid-template-columns: 8fr 2fr; /* Tỷ lệ 80% tên dự án / 20% icon GitHub */
+    align-items: center;
+    width: 100%;
+    margin: 0;
 }
 
+.project-title-row h3 {
+    font-size: 1.35rem; /* Tiêu đề nổi bật, ấn tượng */
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.25;
+    text-align: center; /* Tên dự án căn giữa trong 80% */
+}
+
+.project-title-row .project-link-icon {
+    display: flex;
+    justify-content: center; /* Căn giữa trong 20% bên phải */
+    align-items: center;
+    font-size: 1.35rem;
+    color: var(--text-muted);
+    transition: all 0.25s ease;
+}
+
+.project-title-row .project-link-icon:hover {
+    color: var(--primary-color);
+    transform: scale(1.15);
+}
+
+/* Hiển thị đầy đủ nội dung mô tả chữ và căn đều 2 bên */
 .project-featured-desc {
-    background: rgba(4, 5, 10, 0.4);
-    padding: 24px;
-    border-radius: 12px;
+    background: rgba(4, 5, 10, 0.45);
+    padding: 10px 12px;
+    border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.03);
     color: var(--text-muted);
-    margin-bottom: 24px;
-    font-size: 0.95rem;
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    text-align: justify; /* Căn đều 2 bên thẳng hàng, vuông vắn */
+    text-justify: inter-word;
 }
 
+/* 4 Công nghệ: Căn đều 3 công nghệ ở dòng đầu, dòng 2 để nguyên */
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 30px;
+    row-gap: 8px;
+    column-gap: 12px; /* Tăng khoảng trống ở giữa các công nghệ */
+    margin: 0;
+    width: 100%;
 }
 
 .project-tags li {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: var(--text-main);
-    padding: 4px 12px;
+    padding: 3px 8px;
     border-radius: 4px;
-    font-size: 0.8rem;
+    font-size: 0.68rem;
     font-weight: 500;
+    white-space: nowrap;
+    text-align: center;
 }
 
-.project-links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+/* 3 công nghệ ở dòng đầu tiên căn đều trải dài hết chiều ngang */
+.project-tags li:nth-child(-n+3) {
+    flex: 1;
+}
+
+/* Công nghệ thứ 4 ở dòng 2 để nguyên kích thước tự nhiên */
+.project-tags li:nth-child(4) {
+    flex: 0 0 auto;
 }
 
 .project-btn {
@@ -1611,6 +1792,22 @@ section {
     }
     .project-featured, .project-featured.reverse-layout {
         grid-template-columns: 1fr;
+    }
+    .project-featured,
+    .project-featured:nth-child(odd),
+    .project-featured:nth-child(even) {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        margin-right: 0;
+        align-self: stretch;
+    }
+    .project-featured-image {
+        min-height: 220px;
+        height: 250px;
+    }
+    .project-featured-info {
+        height: auto;
     }
     .project-featured.reverse-layout .project-featured-image {
         order: 1;

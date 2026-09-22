@@ -36,6 +36,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================================================
+    // 1.1. CV DROPDOWN INTERACTION (DESKTOP & TOUCH SCREENS)
+    // ==========================================================================
+    const cvDropdownWrapper = document.getElementById('cv-dropdown-wrapper');
+    const btnCvHeader = document.getElementById('btn-cv-header');
+    const cvDropdownMenu = document.getElementById('cv-dropdown-menu');
+
+    if (cvDropdownWrapper && btnCvHeader) {
+        // Toggle dropdown khi click vào nút chính
+        btnCvHeader.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = cvDropdownWrapper.classList.toggle('open');
+            btnCvHeader.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Đóng dropdown khi click vào link tải CV
+        if (cvDropdownMenu) {
+            cvDropdownMenu.querySelectorAll('.cv-dropdown-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    cvDropdownWrapper.classList.remove('open');
+                    btnCvHeader.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // Đóng dropdown khi click bên ngoài vùng menu
+        document.addEventListener('click', (e) => {
+            if (!cvDropdownWrapper.contains(e.target)) {
+                cvDropdownWrapper.classList.remove('open');
+                btnCvHeader.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    // ==========================================================================
     // 2. HEADER SCROLL EFFECT & SCROLL SPY (ACTIVE NAVIGATION)
     // ==========================================================================
     const header = document.getElementById('main-header');
@@ -105,6 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
             "nav-projects": "Dự Án",
             "nav-contact": "Liên Hệ",
             "btn-cv": "CV của tôi",
+            "cv-vi-title": "CV Tiếng Việt",
+            "cv-vi-desc": "Bản tiếng Việt (PDF)",
+            "cv-en-title": "English CV",
+            "cv-en-desc": "English Version (PDF)",
+            "cv-vi-btn": "CV Tiếng Việt",
+            "cv-en-btn": "English CV",
             "hero-welcome": "👋 Chào mừng bạn đến với không gian của tôi",
             "hero-greet": "Xin chào, tôi là <br><span class=\"highlight-gradient\">Nguyễn Võ Lê Khoa</span>",
             "hero-iam": "Tôi là một",
@@ -142,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
             "project-num-featured": "Featured Project",
             "project1-title": "SmartCV AI Builder",
             "project1-desc": "Một nền tảng trực tuyến thông minh giúp người dùng xây dựng, quản lý và tối ưu hóa CV xin việc một cách chuyên nghiệp với sự trợ giúp đắc lực của Trí tuệ Nhân tạo. Nền tảng được xây dựng với giao diện hiện đại bằng React js và Vue js, kết hợp với hệ thống backend ASP.NET Core và SQL Server.",
-            "project-btn-live": "Xem Trực Tiếp (smartcv-ai.io.vn)",
             "project-num-mobile": "Mobile Project",
             "project2-title": "Smart Cooking & Community",
             "project2-desc": "Ứng dụng di động đa nền tảng kết hợp mạng xã hội ẩm thực và trợ lý nấu ăn. Hỗ trợ khám phá hàng ngàn công thức nấu ăn trực tuyến, đồng bộ hóa thời gian thực qua cơ sở dữ liệu Firebase và hỗ trợ dịch thuật tự động công thức nấu ăn đa ngôn ngữ.",
@@ -178,7 +217,13 @@ document.addEventListener('DOMContentLoaded', () => {
             "nav-skills": "Skills",
             "nav-projects": "Projects",
             "nav-contact": "Contact",
-            "btn-cv": "My CV",
+            "btn-cv": "My Resume",
+            "cv-vi-title": "Vietnamese CV",
+            "cv-vi-desc": "Vietnamese Version (PDF)",
+            "cv-en-title": "English Resume",
+            "cv-en-desc": "English Version (PDF)",
+            "cv-vi-btn": "Vietnamese CV",
+            "cv-en-btn": "English CV",
             "hero-welcome": "👋 Welcome to my personal space",
             "hero-greet": "Hello, I am <br><span class=\"highlight-gradient\">Nguyen Vo Le Khoa</span>",
             "hero-iam": "I am a",
@@ -216,7 +261,6 @@ document.addEventListener('DOMContentLoaded', () => {
             "project-num-featured": "Featured Project",
             "project1-title": "SmartCV AI Builder",
             "project1-desc": "An intelligent online platform that helps users build, manage, and optimize job resumes professionally with the help of Artificial Intelligence. The platform is built with a modern interface using React js and Vue js, combined with an ASP.NET Core and SQL Server backend.",
-            "project-btn-live": "Live Demo (smartcv-ai.io.vn)",
             "project-num-mobile": "Mobile Project",
             "project2-title": "Smart Cooking & Community",
             "project2-desc": "A cross-platform mobile application combining a culinary social network and a cooking assistant. Supports discovering thousands of online recipes, real-time synchronization via Firebase database, and automatic multilingual recipe translation.",
