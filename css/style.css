@@ -1214,8 +1214,8 @@ section {
     position: relative;
     border-radius: 16px;
     border: 1px solid var(--card-border);
-    width: 70%; /* Thu nhỏ 70% so với ban đầu */
-    height: 360px; /* Khóa chiều cao cố định đồng nhất và thoải mái cho cả 3 card */
+    width: 70%; /* Thu nhỏ 70% so le chuẩn Vercel */
+    height: 360px; /* Chiều cao cố định đồng nhất cho cả 3 card */
     transition: var(--transition-normal);
 }
 
@@ -1288,6 +1288,13 @@ section {
     transition: var(--transition-slow);
 }
 
+/* Với ảnh Formal Verification (dashboard 16:9), hiển thị trọn vẹn toàn bộ hệ thống không bị khuất / crop xén */
+.project-featured-image img[src*="formal"] {
+    object-fit: contain;
+    background: #060814;
+    padding: 6px;
+}
+
 .project-featured:hover .project-featured-image img {
     transform: scale(1.03);
 }
@@ -1332,22 +1339,29 @@ section {
     text-align: center;
 }
 
-/* Hàng ngang: Tên dự án chiếm 80% căn giữa, Icon GitHub chiếm 20% còn lại */
+/* Hàng ngang: Tên dự án chiếm 80% căn giữa, Icon Actions chiếm 20% còn lại */
 .project-title-row {
     display: grid;
-    grid-template-columns: 8fr 2fr; /* Tỷ lệ 80% tên dự án / 20% icon GitHub */
+    grid-template-columns: 8fr 2fr; /* Tỷ lệ 80% tên dự án / 20% icon */
     align-items: center;
     width: 100%;
     margin: 0;
 }
 
 .project-title-row h3 {
-    font-size: 1.35rem; /* Tiêu đề nổi bật, ấn tượng */
+    font-size: 1.28rem; /* Tiêu đề vừa vặn, không bị tràn dòng */
     font-weight: 700;
     color: var(--text-main);
     margin: 0;
     line-height: 1.25;
     text-align: center; /* Tên dự án căn giữa trong 80% */
+}
+
+.project-actions-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
 .project-title-row .project-link-icon {
@@ -1378,12 +1392,12 @@ section {
     text-justify: inter-word;
 }
 
-/* 4 Công nghệ: Căn đều 3 công nghệ ở dòng đầu, dòng 2 để nguyên */
+/* 4-5 Công nghệ: Căn đều công nghệ dòng đầu, dòng sau để nguyên */
 .project-tags {
     display: flex;
     flex-wrap: wrap;
     row-gap: 8px;
-    column-gap: 12px; /* Tăng khoảng trống ở giữa các công nghệ */
+    column-gap: 10px;
     margin: 0;
     width: 100%;
 }
@@ -1400,13 +1414,11 @@ section {
     text-align: center;
 }
 
-/* 3 công nghệ ở dòng đầu tiên căn đều trải dài hết chiều ngang */
 .project-tags li:nth-child(-n+3) {
     flex: 1;
 }
 
-/* Công nghệ thứ 4 ở dòng 2 để nguyên kích thước tự nhiên */
-.project-tags li:nth-child(4) {
+.project-tags li:nth-child(n+4) {
     flex: 0 0 auto;
 }
 
@@ -1427,13 +1439,36 @@ section {
     transform: translateY(-2px);
 }
 
+.private-repo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    letter-spacing: 0.03em;
+    backdrop-filter: blur(8px);
+}
+
+.private-repo-badge i {
+    font-size: 0.68rem;
+    color: var(--primary-color);
+}
+
 .project-link-icon {
     font-size: 1.5rem;
     color: var(--text-muted);
+    transition: var(--transition-normal);
 }
 
 .project-link-icon:hover {
     color: var(--primary-color);
+    transform: scale(1.08);
 }
 
 /* --- Other Noteworthy Projects (GitHub API) --- */
@@ -1514,9 +1549,11 @@ section {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    gap: 10px;
 }
 
-.other-project-header .github-link-icon {
+.other-project-header .github-link-icon,
+.other-project-header .demo-link-icon {
     font-size: 1.25rem;
     color: var(--text-muted);
     transition: var(--transition-normal);
@@ -1524,7 +1561,12 @@ section {
 
 .other-project-header .github-link-icon:hover {
     color: var(--secondary-color);
-    transform: scale(1.1);
+    transform: scale(1.15);
+}
+
+.other-project-header .demo-link-icon:hover {
+    color: var(--primary-color);
+    transform: scale(1.15);
 }
 
 .other-project-card-desc {
@@ -1937,21 +1979,14 @@ section {
     }
     .project-featured, .project-featured.reverse-layout {
         grid-template-columns: 1fr;
-    }
-    .project-featured,
-    .project-featured:nth-child(odd),
-    .project-featured:nth-child(even) {
-        width: 100%;
-        height: auto;
-        margin-left: 0;
-        margin-right: 0;
-        align-self: stretch;
+        min-height: auto;
     }
     .project-featured-image {
-        min-height: 220px;
-        height: 250px;
+        min-height: 260px;
+        height: 300px;
     }
     .project-featured-info {
+        padding: 30px 24px;
         height: auto;
     }
     .project-featured.reverse-layout .project-featured-image {
@@ -1959,9 +1994,6 @@ section {
     }
     .project-featured.reverse-layout .project-featured-info {
         order: 2;
-    }
-    .project-featured-image {
-        min-height: 250px;
     }
     .skills-grid-new {
         grid-template-columns: repeat(5, 1fr);
