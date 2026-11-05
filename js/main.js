@@ -139,12 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
             "nav-projects": "Dự Án",
             "nav-contact": "Liên Hệ",
             "btn-cv": "CV của tôi",
-            "cv-vi-title": "CV Tiếng Việt",
-            "cv-vi-desc": "Bản tiếng Việt (PDF)",
-            "cv-en-title": "English CV",
-            "cv-en-desc": "English Version (PDF)",
-            "cv-vi-btn": "CV Tiếng Việt",
-            "cv-en-btn": "English CV",
+            "cv-fullstack-title": "CV Full-Stack Dev",
+            "cv-fullstack-desc": "Web Systems & Cloud",
+            "cv-ai-title": "CV AI Engineer",
+            "cv-ai-desc": "Applied AI & ML/LLMs",
+            "cv-fullstack-btn": "CV Full-Stack Dev",
+            "cv-ai-btn": "CV AI Engineer",
             "hero-welcome": "👋 Chào mừng bạn đến với không gian của tôi",
             "hero-greet": "Xin chào, tôi là <br><span class=\"highlight-gradient\">Nguyễn Võ Lê Khoa</span>",
             "hero-iam": "Tôi là một",
@@ -181,10 +181,10 @@ document.addEventListener('DOMContentLoaded', () => {
             "project-heart-badge": "DỰ ÁN TÂM HUYẾT NHẤT",
             "project-num-featured": "Featured Project",
             "project1-title": "SmartCV AI Builder",
-            "project1-desc": "Một nền tảng trực tuyến thông minh giúp người dùng xây dựng, quản lý và tối ưu hóa CV xin việc một cách chuyên nghiệp với sự trợ giúp đắc lực của Trí tuệ Nhân tạo. Nền tảng được xây dựng với giao diện hiện đại bằng React js và Vue js, kết hợp với hệ thống backend ASP.NET Core và SQL Server.",
-            "project-num-mobile": "Mobile Project",
-            "project2-title": "Smart Cooking & Community",
-            "project2-desc": "Ứng dụng di động đa nền tảng kết hợp mạng xã hội ẩm thực và trợ lý nấu ăn. Hỗ trợ khám phá hàng ngàn công thức nấu ăn trực tuyến, đồng bộ hóa thời gian thực qua cơ sở dữ liệu Firebase và hỗ trợ dịch thuật tự động công thức nấu ăn đa ngôn ngữ.",
+            "project1-desc": "Nền tảng trực tuyến thông minh giúp người dùng kiến tạo, quản lý và tối ưu hóa CV chuẩn ATS. Tích hợp trình biên tập CV kéo thả trực quan (30+ template), động cơ AI Smart Match phân tích độ tương thích việc làm (Sentence-Transformers) và phòng phỏng vấn ảo chuẩn STAR chạy mô hình Qwen 2.5 cục bộ qua Ollama.",
+            "project-num-formal": "Dự Án Nghiên Cứu AI",
+            "project2-title": "Formal Verification-in-the-Loop",
+            "project2-desc": "Khung sinh mã nguồn và tự sửa lỗi khép kín (Actor-Critic) loại bỏ ảo giác cho LLM dựa trên kiểm định logic hình thức. Kết hợp sức mạnh suy diễn của mô hình ngôn ngữ lớn với tính đúng đắn toán học tất định của Dafny 4.x và bộ giải Z3 SMT Solver, tích hợp giao diện Streamlit trực quan và cơ chế Spec-Locking Protocol.",
             "project3-title": "Face Recognition (PCA & OpenCV)",
             "project3-desc": "Hệ thống nhận diện khuôn mặt thời gian thực sử dụng camera giám sát. Dự án triển khai thuật toán Phân tích Thành phần Chính (PCA) để giảm số chiều đặc trưng (Eigenfaces) và tiến hành phân loại danh tính khuôn mặt chính xác trên bộ dữ liệu kiểm thử được thiết lập.",
             "other-projects-title": "Các Dự Án Khác (GitHub)",
@@ -217,13 +217,13 @@ document.addEventListener('DOMContentLoaded', () => {
             "nav-skills": "Skills",
             "nav-projects": "Projects",
             "nav-contact": "Contact",
-            "btn-cv": "My Resume",
-            "cv-vi-title": "Vietnamese CV",
-            "cv-vi-desc": "Vietnamese Version (PDF)",
-            "cv-en-title": "English Resume",
-            "cv-en-desc": "English Version (PDF)",
-            "cv-vi-btn": "Vietnamese CV",
-            "cv-en-btn": "English CV",
+            "btn-cv": "My Resumes",
+            "cv-fullstack-title": "Full-Stack Dev CV",
+            "cv-fullstack-desc": "Web Systems & Cloud",
+            "cv-ai-title": "AI Engineer CV",
+            "cv-ai-desc": "Applied AI & ML/LLMs",
+            "cv-fullstack-btn": "Full-Stack Dev CV",
+            "cv-ai-btn": "AI Engineer CV",
             "hero-welcome": "👋 Welcome to my personal space",
             "hero-greet": "Hello, I am <br><span class=\"highlight-gradient\">Nguyen Vo Le Khoa</span>",
             "hero-iam": "I am a",
@@ -260,10 +260,10 @@ document.addEventListener('DOMContentLoaded', () => {
             "project-heart-badge": "MOST PASSIONATE PROJECT",
             "project-num-featured": "Featured Project",
             "project1-title": "SmartCV AI Builder",
-            "project1-desc": "An intelligent online platform that helps users build, manage, and optimize job resumes professionally with the help of Artificial Intelligence. The platform is built with a modern interface using React js and Vue js, combined with an ASP.NET Core and SQL Server backend.",
-            "project-num-mobile": "Mobile Project",
-            "project2-title": "Smart Cooking & Community",
-            "project2-desc": "A cross-platform mobile application combining a culinary social network and a cooking assistant. Supports discovering thousands of online recipes, real-time synchronization via Firebase database, and automatic multilingual recipe translation.",
+            "project1-desc": "Intelligent online platform for crafting, managing, and ATS-optimizing resumes. Features an intuitive drag-and-drop builder (30+ templates, A4 print-ready PDF export), semantic AI job matching (Sentence-Transformers), and a local STAR mock interview simulator powered by Qwen 2.5 via Ollama.",
+            "project-num-formal": "AI Research Project",
+            "project2-title": "Formal Verification-in-the-Loop",
+            "project2-desc": "Closed-loop Actor-Critic deductive repair framework eliminating LLM hallucinations through formal verification. Combines deep reasoning models with deterministic mathematical correctness via Dafny 4.x and Z3 SMT Solver, featuring Spec-Locking integrity guards and a Streamlit dashboard.",
             "project3-title": "Face Recognition (PCA & OpenCV)",
             "project3-desc": "A real-time face recognition system using surveillance cameras. The project implements the Principal Component Analysis (PCA) algorithm to reduce feature dimensions (Eigenfaces) and performs accurate face identity classification on a custom test dataset.",
             "other-projects-title": "Other Noteworthy Projects (GitHub)",
@@ -417,19 +417,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Lưu cache repo để cập nhật lại khi đổi ngôn ngữ
     let cachedGitHubRepos = null;
 
-    // Mô tả ngắn gọn, ý nghĩa cho từng dự án GitHub (hỗ trợ cả Tiếng Việt và Tiếng Anh)
+    // Mô tả ngắn gọn, ý nghĩa cho 6 dự án GitHub được chỉ định (hỗ trợ cả Tiếng Việt và Tiếng Anh)
     const repoDescriptions = {
-        'ECO-PROTECTMNM': {
-            vi: 'Nền tảng web hỗ trợ phân loại rác thải, nâng cao ý thức bảo vệ môi trường và kết nối cộng đồng xanh.',
-            en: 'Web platform for waste sorting guidance, environmental awareness, and green community engagement.'
+        'LV23-088-Library-Revenue-AI': {
+            vi: 'Nền tảng web phân tích và dự báo doanh thu thư viện thông minh ứng dụng AI, tối ưu hóa giao diện và triển khai thực tế trên Vercel.',
+            en: 'Smart library revenue forecasting and analytics web platform powered by AI, optimized and deployed live on Vercel.'
         },
         'Print3DWeb': {
             vi: 'Nền tảng thương mại dịch vụ in 3D trực tuyến, hỗ trợ xem trước mô hình 3D và đặt in theo yêu cầu.',
-            en: 'Online 3D printing commercial platform featuring 3D model preview and on-demand custom printing.'
+            en: 'Online 3D printing commercial platform featuring interactive 3D model preview and on-demand custom printing.'
         },
-        'event-cert-soroban': {
-            vi: 'Hợp đồng thông minh trên Stellar Soroban phát hành và xác thực chứng chỉ sự kiện số trên Blockchain.',
-            en: 'Smart contract on Stellar Soroban for issuing and verifying digital certificates on Blockchain.'
+        'AutomationTesting': {
+            vi: 'Bộ kịch bản kiểm thử tự động toàn diện kiểm tra hồi quy luồng nghiệp vụ giao diện UI và RESTful API.',
+            en: 'Comprehensive automated test suite covering web UI user flows and RESTful API regression testing.'
+        },
+        'GreenKitchen': {
+            vi: 'Ứng dụng di động đa nền tảng hỗ trợ nấu ăn thông minh, quản lý nguyên liệu nhà bếp và khám phá công thức ẩm thực.',
+            en: 'Cross-platform mobile culinary assistant for smart kitchen management and recipe discovery.'
         },
         'Hotel-Management-Secured': {
             vi: 'Hệ thống quản lý khách sạn bảo mật cao, phân quyền người dùng chặt chẽ và phòng chống lỗ hổng bảo mật.',
@@ -438,49 +442,90 @@ document.addEventListener('DOMContentLoaded', () => {
         'Hotel-Management-System': {
             vi: 'Phần mềm desktop quản lý khách sạn toàn diện: sơ đồ phòng, đặt phòng, dịch vụ và xuất hóa đơn.',
             en: 'Comprehensive desktop hotel management software for room layout, booking, services, and billing.'
-        },
-        'AutomationTesting': {
-            vi: 'Bộ kịch bản kiểm thử tự động toàn diện kiểm tra hồi quy luồng nghiệp vụ giao diện UI và RESTful API.',
-            en: 'Automated test suite covering web UI user flows and RESTful API regression testing.'
         }
     };
+
+    // Dữ liệu dự phòng chuẩn xác cho cả 6 dự án phòng ngừa rate-limit của GitHub API
+    const fallbackProjectsData = [
+        {
+            name: 'LV23-088-Library-Revenue-AI',
+            html_url: 'https://github.com/KhoaSuyThan/LV23-088-Library-Revenue-AI',
+            homepage: 'https://lv-23-088-library-revenue-ai.vercel.app',
+            language: 'JavaScript',
+            stargazers_count: 2,
+            forks_count: 0
+        },
+        {
+            name: 'Print3DWeb',
+            html_url: 'https://github.com/KhoaSuyThan/Print3DWeb',
+            homepage: null,
+            language: 'JavaScript',
+            stargazers_count: 3,
+            forks_count: 0
+        },
+        {
+            name: 'AutomationTesting',
+            html_url: 'https://github.com/KhoaSuyThan/AutomationTesting',
+            homepage: null,
+            language: 'JavaScript',
+            stargazers_count: 2,
+            forks_count: 0
+        },
+        {
+            name: 'GreenKitchen',
+            html_url: 'https://github.com/nguyennhatnam213654-creator/GreenKitchen',
+            homepage: null,
+            language: 'Dart',
+            stargazers_count: 1,
+            forks_count: 0
+        },
+        {
+            name: 'Hotel-Management-Secured',
+            html_url: 'https://github.com/KhoaSuyThan/Hotel-Management-Secured',
+            homepage: null,
+            language: 'Java',
+            stargazers_count: 3,
+            forks_count: 0
+        },
+        {
+            name: 'Hotel-Management-System',
+            html_url: 'https://github.com/KhoaSuyThan/Hotel-Management-System',
+            homepage: null,
+            language: 'C#',
+            stargazers_count: 4,
+            forks_count: 0
+        }
+    ];
 
     function renderGitHubProjects(repos) {
         const grid = document.getElementById('github-projects-grid');
         if (!grid) return;
 
-        // Danh sách các repository GitHub được chọn để hiển thị theo thứ tự định sẵn
+        // Danh sách 6 repository GitHub được chọn hiển thị đúng thứ tự
         const selectedRepos = [
-            'ECO-PROTECTMNM', 
+            'LV23-088-Library-Revenue-AI', 
             'Print3DWeb', 
-            'event-cert-soroban', 
+            'AutomationTesting', 
+            'GreenKitchen', 
             'Hotel-Management-Secured', 
-            'Hotel-Management-System', 
-            'AutomationTesting' 
+            'Hotel-Management-System'
         ];
         
-        // Filter and sort by the order defined in selectedRepos
+        // Filter and sort by the exact order in selectedRepos
         const filteredRepos = repos
             .filter(repo => selectedRepos.includes(repo.name))
             .sort((a, b) => selectedRepos.indexOf(a.name) - selectedRepos.indexOf(b.name));
 
-        if (filteredRepos.length === 0) {
-            grid.innerHTML = `
-                <div class="empty-repos">
-                    <p data-i18n="github-empty">${translations[currentLang]['github-empty'] || 'Không tìm thấy dự án công khai nào.'}</p>
-                </div>
-            `;
-            return;
-        }
+        const finalReposToRender = filteredRepos.length >= 6 ? filteredRepos : fallbackProjectsData;
 
         grid.innerHTML = ''; // Clear loading state
         
-        filteredRepos.forEach(repo => {
+        finalReposToRender.forEach(repo => {
             const card = document.createElement('div');
             card.className = 'other-project-card glass-card';
             
             // Định dạng ngôn ngữ / công nghệ sử dụng
-            const lang = repo.language || 'HTML/CSS';
+            const lang = repo.language || (repo.name === 'GreenKitchen' ? 'Dart' : 'JavaScript');
 
             // Gán mô tả ngắn gọn, ý nghĩa cho từng dự án
             let desc = '';
@@ -491,6 +536,12 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 desc = currentLang === 'vi' ? 'Dự án mã nguồn mở trên GitHub.' : 'Open source project on GitHub.';
             }
+
+            // Tạo nút liên kết Live Demo nếu có homepage
+            const hasHomepage = repo.homepage && repo.homepage.trim() !== '' && repo.homepage !== 'None';
+            const demoLinkHtml = hasHomepage 
+                ? `<a href="${repo.homepage}" target="_blank" rel="noopener noreferrer" class="demo-link-icon" aria-label="Live Demo Website" title="Xem Live Demo: ${repo.homepage}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>` 
+                : '';
             
             card.innerHTML = `
                 <div class="other-project-header">
@@ -499,7 +550,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <h4 class="other-project-card-title" title="${repo.name}">${repo.name}</h4>
                     <div class="other-project-link-box">
-                        <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="github-link-icon" aria-label="GitHub Repository">
+                        ${demoLinkHtml}
+                        <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="github-link-icon" aria-label="GitHub Repository" title="Xem kho mã nguồn GitHub">
                             <i class="fa-brands fa-github"></i>
                         </a>
                     </div>
@@ -508,8 +560,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="other-project-footer">
                     <span class="other-project-tech">${lang}</span>
                     <div class="other-project-stats">
-                        <span><i class="fa-regular fa-star"></i> ${repo.stargazers_count}</span>
-                        <span><i class="fa-solid fa-code-fork"></i> ${repo.forks_count}</span>
+                        <span><i class="fa-regular fa-star"></i> ${repo.stargazers_count || 0}</span>
+                        <span><i class="fa-solid fa-code-fork"></i> ${repo.forks_count || 0}</span>
                     </div>
                 </div>
             `;
@@ -518,26 +570,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fetch GitHub Projects dynamically
+    // Fetch GitHub Projects dynamically (hỗ trợ cả repo KhoaSuyThan và GreenKitchen)
     async function fetchGitHubProjects() {
         const grid = document.getElementById('github-projects-grid');
         if (!grid) return;
 
         try {
-            const response = await fetch('https://api.github.com/users/KhoaSuyThan/repos?per_page=100');
-            if (!response.ok) {
-                throw new Error('Failed to fetch repositories');
+            // Fetch song song repos của KhoaSuyThan và GreenKitchen
+            const [userReposRes, greenKitchenRes] = await Promise.allSettled([
+                fetch('https://api.github.com/users/KhoaSuyThan/repos?per_page=100'),
+                fetch('https://api.github.com/repos/nguyennhatnam213654-creator/GreenKitchen')
+            ]);
+
+            let mergedRepos = [];
+
+            if (userReposRes.status === 'fulfilled' && userReposRes.value.ok) {
+                const userRepos = await userReposRes.value.json();
+                mergedRepos.push(...userRepos);
             }
-            const repos = await response.json();
-            cachedGitHubRepos = repos;
-            renderGitHubProjects(repos);
+
+            if (greenKitchenRes.status === 'fulfilled' && greenKitchenRes.value.ok) {
+                const greenKitchenRepo = await greenKitchenRes.value.json();
+                mergedRepos.push(greenKitchenRepo);
+            } else {
+                // Thêm GreenKitchen từ fallback nếu request riêng bị chặn
+                mergedRepos.push(fallbackProjectsData.find(r => r.name === 'GreenKitchen'));
+            }
+
+            if (mergedRepos.length === 0) {
+                mergedRepos = fallbackProjectsData;
+            }
+
+            cachedGitHubRepos = mergedRepos;
+            renderGitHubProjects(mergedRepos);
         } catch (error) {
-            console.error('Error fetching GitHub repos:', error);
-            grid.innerHTML = `
-                <div class="error-repos">
-                    <p data-i18n="github-error">${translations[currentLang]['github-error'] || 'Không thể tải các dự án từ GitHub lúc này.'}</p>
-                </div>
-            `;
+            console.warn('Lỗi khi tải dữ liệu từ GitHub API, sử dụng dữ liệu fallback mượt mà:', error);
+            cachedGitHubRepos = fallbackProjectsData;
+            renderGitHubProjects(fallbackProjectsData);
         }
     }
 

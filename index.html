@@ -76,18 +76,18 @@
                         <i class="fa-solid fa-chevron-down cv-arrow"></i>
                     </button>
                     <div class="cv-dropdown-menu" id="cv-dropdown-menu">
-                        <a href="assets/CV_Fullstack_Developer_Nguyen_Vo_Le_Khoa_VI.pdf" target="_blank" rel="noopener noreferrer" class="cv-dropdown-item" id="cv-item-vi">
-                            <span class="cv-flag">🇻🇳</span>
+                        <a href="assets/FullStack_Developer_Nguyen_Vo_Le_Khoa.pdf" target="_blank" rel="noopener noreferrer" class="cv-dropdown-item" id="cv-item-fullstack">
+                            <span class="cv-flag"><i class="fa-solid fa-layer-group" style="color: #00f2fe;"></i></span>
                             <div class="cv-item-text">
-                                <span class="cv-item-title" data-i18n="cv-vi-title">CV Tiếng Việt</span>
-                                <span class="cv-item-desc" data-i18n="cv-vi-desc">Bản tiếng Việt (PDF)</span>
+                                <span class="cv-item-title" data-i18n="cv-fullstack-title">CV Full-Stack Dev</span>
+                                <span class="cv-item-desc" data-i18n="cv-fullstack-desc">Web Systems & Cloud (PDF)</span>
                             </div>
                         </a>
-                        <a href="assets/CV_Fullstack_Developer_Nguyen_Vo_Le_Khoa_EN.pdf" target="_blank" rel="noopener noreferrer" class="cv-dropdown-item" id="cv-item-en">
-                            <span class="cv-flag">🇬🇧</span>
+                        <a href="assets/AI_Engineer_Nguyen_Vo_Le_Khoa.pdf" target="_blank" rel="noopener noreferrer" class="cv-dropdown-item" id="cv-item-ai">
+                            <span class="cv-flag"><i class="fa-solid fa-brain" style="color: #a259ff;"></i></span>
                             <div class="cv-item-text">
-                                <span class="cv-item-title" data-i18n="cv-en-title">English CV</span>
-                                <span class="cv-item-desc" data-i18n="cv-en-desc">English Version (PDF)</span>
+                                <span class="cv-item-title" data-i18n="cv-ai-title">CV AI Engineer</span>
+                                <span class="cv-item-desc" data-i18n="cv-ai-desc">Applied AI & ML/LLMs (PDF)</span>
                             </div>
                         </a>
                     </div>
@@ -110,13 +110,13 @@
             <a href="#projects" class="mobile-nav-link" id="mob-link-projects" data-i18n="nav-projects">Dự Án</a>
             <a href="#contact" class="mobile-nav-link" id="mob-link-contact" data-i18n="nav-contact">Liên Hệ</a>
             
-            <!-- Mobile CV Options (Tiếng Việt & Tiếng Anh) -->
+            <!-- Mobile CV Options (FullStack & AI Engineer) -->
             <div class="mobile-cv-group">
-                <a href="assets/CV_Fullstack_Developer_Nguyen_Vo_Le_Khoa_VI.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link btn-cv-mobile" id="mob-link-cv-vi">
-                    <i class="fa-solid fa-file-pdf"></i> <span data-i18n="cv-vi-btn">CV Tiếng Việt</span>
+                <a href="assets/FullStack_Developer_Nguyen_Vo_Le_Khoa.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link btn-cv-mobile" id="mob-link-cv-fullstack">
+                    <i class="fa-solid fa-layer-group"></i> <span data-i18n="cv-fullstack-btn">CV Full-Stack Dev</span>
                 </a>
-                <a href="assets/CV_Fullstack_Developer_Nguyen_Vo_Le_Khoa_EN.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link btn-cv-mobile btn-cv-mobile-en" id="mob-link-cv-en">
-                    <i class="fa-solid fa-file-pdf"></i> <span data-i18n="cv-en-btn">English CV</span>
+                <a href="assets/AI_Engineer_Nguyen_Vo_Le_Khoa.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link btn-cv-mobile btn-cv-mobile-en" id="mob-link-cv-ai">
+                    <i class="fa-solid fa-brain"></i> <span data-i18n="cv-ai-btn">CV AI Engineer</span>
                 </a>
             </div>
             <div class="mobile-lang-container">
@@ -491,47 +491,50 @@
                                 <span class="project-number" data-i18n="project-num-featured">Featured Project</span>
                                 <div class="project-title-row">
                                     <h3 data-i18n="project1-title">SmartCV AI Builder</h3>
-                                    <a href="https://github.com/KhoaSuyThan" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="GitHub Repo" id="link-smartcv-github">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
+                                    <div class="project-actions-group">
+                                        <span class="private-repo-badge" title="Mã nguồn riêng tư (Private Repository)"><i class="fa-solid fa-lock"></i> Private</span>
+                                    </div>
                                 </div>
                             </div>
                             <p class="project-featured-desc" data-i18n="project1-desc">
-                                Một nền tảng trực tuyến thông minh giúp người dùng xây dựng, quản lý và tối ưu hóa CV xin việc một cách chuyên nghiệp với sự trợ giúp đắc lực của Trí tuệ Nhân tạo. Nền tảng được xây dựng với giao diện hiện đại bằng React js và Vue js, kết hợp với hệ thống backend ASP.NET Core và SQL Server.
+                                Nền tảng trực tuyến thông minh giúp người dùng kiến tạo, quản lý và tối ưu hóa CV chuẩn ATS. Tích hợp trình biên tập CV kéo thả trực quan (30+ template), động cơ AI Smart Match phân tích độ tương thích việc làm (Sentence-Transformers) và phòng phỏng vấn ảo chuẩn STAR chạy mô hình Qwen 2.5 cục bộ qua Ollama.
                             </p>
                             <ul class="project-tags">
-                                <li>React.js</li>
-                                <li>Vue.js</li>
-                                <li>ASP.NET Core MVC</li>
+                                <li>ASP.NET Core</li>
+                                <li>Vue 3 Builder</li>
+                                <li>Python FastAPI</li>
+                                <li>Sentence-Transformers</li>
+                                <li>Ollama / Qwen 2.5</li>
                                 <li>SQL Server</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Project 2: Smart Cooking App -->
+                    <!-- Project 2: Formal Verification-in-the-Loop (AI Research) -->
                     <div class="project-featured glass-card reverse-layout">
                         <div class="project-featured-image">
-                            <img src="assets/project-cooking.png" alt="Smart Cooking Mobile App Screenshot" loading="lazy">
+                            <img src="assets/project-formal-verification.png" alt="Formal Verification in the Loop Dashboard Screenshot" loading="lazy">
                             <div class="image-overlay"></div>
                         </div>
                         <div class="project-featured-info">
                             <div class="project-header-group">
-                                <span class="project-number" data-i18n="project-num-mobile">Mobile Project</span>
+                                <span class="project-number" data-i18n="project-num-formal">AI Research Project</span>
                                 <div class="project-title-row">
-                                    <h3 data-i18n="project2-title">Smart Cooking & Community</h3>
-                                    <a href="https://github.com/nguyennhatnam213654-creator/DoAnApp" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="GitHub Repo" id="link-cooking-github">
+                                    <h3 data-i18n="project2-title">Formal Verification-in-the-Loop</h3>
+                                    <a href="https://github.com/KhoaSuyThan/Formal_Verification-in-the-Loop" target="_blank" rel="noopener noreferrer" class="project-link-icon" aria-label="GitHub Repo" id="link-formal-github" title="GitHub Repository">
                                         <i class="fa-brands fa-github"></i>
                                     </a>
                                 </div>
                             </div>
                             <p class="project-featured-desc" data-i18n="project2-desc">
-                                Ứng dụng di động đa nền tảng kết hợp mạng xã hội ẩm thực và trợ lý nấu ăn. Hỗ trợ khám phá hàng ngàn công thức nấu ăn trực tuyến, đồng bộ hóa thời gian thực qua cơ sở dữ liệu Firebase và hỗ trợ dịch thuật tự động công thức nấu ăn đa ngôn ngữ.
+                                Khung sinh mã nguồn và tự sửa lỗi khép kín (Actor-Critic) loại bỏ ảo giác cho LLM dựa trên kiểm định logic hình thức. Kết hợp sức mạnh suy diễn của mô hình ngôn ngữ lớn với tính đúng đắn toán học tất định của Dafny 4.x và bộ giải Z3 SMT Solver, tích hợp giao diện Streamlit trực quan và cơ chế Spec-Locking Protocol.
                             </p>
                             <ul class="project-tags">
-                                <li>Flutter</li>
-                                <li>Dart</li>
-                                <li>Firebase Firestore</li>
-                                <li>TheMealDB API</li>
+                                <li>Python 3.10+</li>
+                                <li>Dafny 4.x</li>
+                                <li>Z3 SMT Solver</li>
+                                <li>LLM Reasoning</li>
+                                <li>Streamlit UI</li>
                             </ul>
                         </div>
                     </div>
